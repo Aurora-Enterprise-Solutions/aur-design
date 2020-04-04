@@ -1,0 +1,77 @@
+/*
+ * Font Mixin
+ */
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+/*
+ * Font-family
+ */
+$font-family-header: Einia, Helvetica;
+$font-family-regular: Inter, Helvetica;
+
+/*
+ * Font-weight
+ */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+/*
+ * Font-size
+ */
+h1 {
+    font-family: $font-family-header;
+    font-size: 3.5rem;
+}
+
+/*
+ * Font-face
+ */
+@include font-face('Eina', '../fonts/Eina/Eina01-Bold', 700, normal, ttf);
+
+@include font-face('Inter', '../fonts/Inter/Inter-Light', 300, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-Regular', 400, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-Medium', 500, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-SemiBold', 600, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-Bold', 700, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-ExtraBold', 800, normal, woff);
+@include font-face('Inter', '../fonts/Inter/Inter-Black', 900, normal, woff);

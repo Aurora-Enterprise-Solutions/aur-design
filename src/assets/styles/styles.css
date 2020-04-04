@@ -1,0 +1,158 @@
+/*
+ * Globals
+ */
+/*
+ * Font Mixin
+ */
+/*
+ * Font-family
+ */
+/*
+ * Font-weight
+ */
+/*
+ * Font-size
+ */
+h1 {
+  font-family: Einia, Helvetica;
+  font-size: 3.5rem;
+}
+
+/*
+ * Font-face
+ */
+@font-face {
+  font-family: "Eina";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Eina/Eina01-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Inter/Inter-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Inter/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Inter/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter/Inter-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/Inter/Inter-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/Inter/Inter-Black.woff") format("woff");
+}
+
+/*
+ * COLORS
+ */
+/*
+ * Components
+ */
+/*
+ * BUTTON
+ */
+.au-button {
+  display: inline-block;
+}
+
+.au-button[au-color="primary"] .au-button-element {
+  background-color: #07D79C;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  color: #FFFFFF;
+  font-family: Inter, Helvetica;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.au-button[au-color="primary"] .au-button-element:hover, .au-button[au-color="primary"] .au-button-element:active {
+  color: #FFFFFF;
+  background-color: #02C38D;
+}
+
+.au-button[au-color="primary"] .au-button-element:focus {
+  outline: none;
+}
+
+.au-button[au-color="primary"] .au-button-element:disabled {
+  color: #FFFFFF;
+  background-color: #D3D9E1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  pointer-events: none;
+}
+
+.au-button[au-color="hight"] .au-button-element {
+  background-color: #FFFFFF;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  color: #20324A;
+  font-family: Inter, Helvetica;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.au-button[au-color="hight"] .au-button-element:hover, .au-button[au-color="hight"] .au-button-element:active {
+  color: #FFFFFF;
+  background-color: #20324A;
+}
+
+.au-button[au-color="hight"] .au-button-element:focus {
+  outline: none;
+}
+
+.au-button[au-color="hight"] .au-button-element:disabled {
+  color: #FFFFFF;
+  background-color: #D3D9E1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  pointer-events: none;
+}
+/*# sourceMappingURL=styles.css.map */
