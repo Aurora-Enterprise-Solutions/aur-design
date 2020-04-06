@@ -1,4 +1,13 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['test']
-  timeout: 20s
+- name: 'gcr.io/kaniko-project/executor:latest'
+    args:
+    - --destination=gcr.io/$PROJECT_ID/image
+    - --cache=true
+    - --cache-ttl=24h
+- name: node
+    entrypoint: npm
+    args: ['install']
+- name: node
+    entrypoint: npm
+    args: ['test']
+    timeout: 20s
