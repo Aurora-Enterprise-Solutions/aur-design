@@ -1,0 +1,53 @@
+/*
+ * BUTTON
+ */
+
+@mixin setAuButton($color, $color-hover, $bkg-color, $bkg-hover-color) {
+    .au-button-element {
+        // Wrapper
+        background-color: $bkg-color;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.35);
+        cursor: pointer;
+        transition: color 0.3s ease,
+                    background-color 0.3s ease;
+
+        // Font
+        color: $color;
+        font-family: Inter, Helvetica;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+
+        &:hover,
+        &:active {
+            color: $color-hover;
+            background-color: $bkg-hover-color;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:disabled {
+            color: $color-white;
+            background-color: $color-disabled;
+            box-shadow: none;
+            pointer-events: none;
+        }
+    }
+}
+
+.au-button {
+    display: inline-block;
+
+    // Color prop
+    &[au-color="primary"] {
+        @include setAuButton($color-white, $color-white, $color-caribbean-green, $color-caribbean-green-hover);
+    }
+
+    &[au-color="hight"] {
+        @include setAuButton($color-hight-contrast, $color-white, $color-white, $color-hight-contrast);
+    }
+}
