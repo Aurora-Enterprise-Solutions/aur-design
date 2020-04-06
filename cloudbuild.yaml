@@ -1,8 +1,6 @@
 steps:
-- name: node
-    entrypoint: npm
+- name: 'gcr.io/cloud-builders/npm'
     args: ['install']
-- name: node
-    entrypoint: npm
+- name: 'gcr.io/cloud-builders/npm'
     args: ['test']
     timeout: 20s
