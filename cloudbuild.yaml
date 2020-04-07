@@ -6,8 +6,5 @@ steps:
   - --cache-ttl=24h
 - name: node
   entrypoint: npm
-  args: ['install']
-- name: node
-  entrypoint: npm
   args: ['test']
   timeout: 600s

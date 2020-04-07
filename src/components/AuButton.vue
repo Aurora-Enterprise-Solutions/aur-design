@@ -8,9 +8,6 @@
 </template>
 
 <script>
-    const COLORS = ['primary', 'hight']
-    const HTML_TYPE = ['button', 'submit', 'reset']
-
     export default {
         name: 'AuButton',
         props: {
@@ -64,8 +61,8 @@
         },
         data() {
             return {
-                COLORS,
-                HTML_TYPE
+                COLORS: ['primary', 'hight'],
+                HTML_TYPE: ['button', 'submit', 'reset']
             }
         },
         computed: {
