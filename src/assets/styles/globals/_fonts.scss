@@ -41,7 +41,7 @@
 /*
  * Font-family
  */
-$font-family-header: Einia, Helvetica;
+$font-family-header: Eina, Helvetica;
 $font-family-regular: Inter, Helvetica;
 
 /*
@@ -54,14 +54,6 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
-
-/*
- * Font-size
- */
-h1 {
-    font-family: $font-family-header;
-    font-size: 3.5rem;
-}
 
 /*
  * Font-face

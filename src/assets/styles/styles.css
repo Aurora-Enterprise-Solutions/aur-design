@@ -11,14 +11,6 @@
  * Font-weight
  */
 /*
- * Font-size
- */
-h1 {
-  font-family: Einia, Helvetica;
-  font-size: 3.5rem;
-}
-
-/*
  * Font-face
  */
 @font-face {
@@ -83,6 +75,36 @@ h1 {
 /*
  * Components
  */
+/*
+ * TEXT
+ */
+.au-text h1, .au-text h2, .au-text h3 {
+  font-family: Eina, Helvetica;
+  font-weight: 700;
+  color: #191919;
+  margin: 0 0 30px 0;
+}
+
+.au-text h1 {
+  font-size: 3rem;
+}
+
+.au-text h2 {
+  font-size: 2.5rem;
+}
+
+.au-text h3 {
+  font-size: 2rem;
+}
+
+.au-text p, .au-text label {
+  font-family: Inter, Helvetica;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #515151;
+  margin: 0 0 15px 0;
+}
+
 /*
  * BUTTON
  */
