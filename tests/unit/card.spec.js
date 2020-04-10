@@ -9,6 +9,6 @@ describe('Componente AuCard', () => {
 
   test('el componente tiene nombre', () => {
     const wrapper = mount(AuCard);
-    expect(wrapper.name()).toBe('AuCarde');
+    expect(wrapper.name()).toBe('AuCard');
   })
 })
