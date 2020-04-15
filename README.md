@@ -11,6 +11,7 @@ Aurora Design es un proyecto dedicado a generar componentes para la interfaz de 
 
 Esta es la lista de componentes del framework. De momento sólo están disponibles los seleccionados.
 
+- [x] Text
 - [x] Button
 - [ ] Input
 - [ ] InputNumber
