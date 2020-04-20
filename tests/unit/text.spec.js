@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import AuText from '@/components/AuText.vue'
+import AuText from '@/components/general/AuText.vue'
 
 describe('Componente AuText', () => {
 

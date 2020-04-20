@@ -1,16 +1,64 @@
+const path = require('path')
+const { resolve } = require('path')
+const { VueLoaderPlugin } = require('vue-loader')
+
 module.exports = {
-	// set your styleguidist configuration here
-	title: 'Default Style Guide',
-	// components: 'src/components/**/[A-Z]*.vue',
-	// defaultExample: true,
-	// sections: [
-	//   {
-	//     name: 'First Section',
-	//     components: 'src/components/**/[A-Z]*.vue'
-	//   }
-	// ],
-	// webpackConfig: {
-	//   // custom config goes here
-	// },
-	exampleMode: 'expand'
+	title: 'Aurora UI Toolkit',
+	components: 'src/components/**/[A-Z]*.vue',
+	pagePerSection: true,
+	usageMode: 'expand',
+	sections: [
+		{
+			name: 'Introducción',
+			description: 'Introducción a Aurora UI Toolkit',
+			content: 'styleguide/sections/introduction/doc.md'
+		},
+		{
+			name: 'Componentes',
+			sectionDepth: 1,
+			sections: [
+				{
+					name: 'General',
+					components: 'src/components/general/[A-Z]*.vue'
+				}
+			]
+		}
+	],
+	webpackConfig: {
+        resolve: {
+            alias: {
+                '~': resolve(__dirname, 'src'),
+                '@': resolve(__dirname, 'src')
+            }
+        },
+        module: {
+            rules: [
+                {
+					test: /\.vue$/,
+                    exclude: /node_modules/,
+                    loader: 'vue-loader'
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    loader: 'babel-loader'
+                },
+                {
+                    test: /\.css$/,
+                    exclude: /node_modules/,
+                    use: ['vue-style-loader', 'css-loader']
+                },
+                {
+                    test: /\.svg$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader', 'vue-svg-loader']
+                },
+                {
+					test: /\.png$/,
+					use: ['url-loader']
+				}
+            ]
+        },
+        plugins: [new VueLoaderPlugin()]
+    }
 }
