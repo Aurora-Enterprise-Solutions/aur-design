@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import AuButton from '@/components/AuButton.vue'
+import AuButton from '@/components/general/AuButton.vue'
 
 describe('Componente AuButton', () => {
 
