@@ -1,34 +1,40 @@
 <template>
-  <div class="au-card" :au-collapsed="isCollapsed" :au-loading="loading" :au-hoverable="hoverable" :au-clickable="clickable">
-      <div class="header" @click="onCollapse">
-          <div class="title-section">
-              <h3>{{ title }}</h3>
-          </div>
+    <div class="au-card" :au-collapsable="collapsable" :au-hoverable="hoverable" :au-collapsed="isCollapsed">
+        <div class="header">
+            <div class="title-section">
+                <!-- @slot Aquí se puede modificar la distribución del título.
+                        @binding {{ title, description }} header
+                -->
+                <slot name="title" :header="{ title, description }">
+                    <au-text tag="h5">{{ title }}</au-text>
+                    <au-text tag="p">{{ description }}</au-text>
+                </slot>
+            </div>
 
-          <div class="extra-section">
-              <slot name="extra"></slot>
-          </div>
-      </div>
+            <div class="extra-section">
+                <!-- @slot Ingresa contenido extra al costado derecho del header. -->
+                <slot name="extra"></slot>
+            </div>
 
-      <div class="body" @click="onClick">
-          <slot></slot>
-      </div>
-  </div>
+            <div v-if="collapsable == true" class="icon-section">
+                <plus-square v-if="isCollapsed" width="1rem" :animatable="true" :hoverable="true" :clickable="true" @click="onCollapse"></plus-square>
+                <minus-square v-else width="1rem" :animatable="true" :hoverable="true" :clickable="true" @click="onCollapse"></minus-square>
+            </div>
+        </div>
+
+        <div ref="body" class="body">
+            <!-- @slot Usa este slot para ingresar el contenido de la tarjeta -->
+            <slot></slot>
+        </div>
+    </div>
 </template>
 
 <script>
+import AuText from './../general/AuText'
+
 export default {
     name: 'AuCard',
     props: {
-        /**
-         * Propiedad que permite a la tarjeta expandirse o no.
-         */
-        collapsed: {
-            type: Boolean,
-            required: false,
-            default: false
-        },
-
         /**
          * Título de la tarjeta.
          */
@@ -39,9 +45,27 @@ export default {
         },
 
         /**
-         * Muestra spin de cargando sobre la tarjeta.
+         * Descripción de la tarjeta.
          */
-        loading: {
+        description: {
+            type: String,
+            required: false,
+            default: ''
+        },
+
+        /**
+         * Propiedad que permite a la tarjeta expandirse o no al montarse.
+         */
+        defaultCollapsed: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+
+        /**
+         * Define si el componente se puede o no colapsar.
+         */
+        collapsable: {
             type: Boolean,
             required: false,
             default: false
@@ -54,40 +78,40 @@ export default {
             type: Boolean,
             required: false,
             default: false
-        },
-
-        /**
-         * La tarjeta puede ser presionada emitiendo un evento click.
-         */
-        clickable: {
-            type: Boolean,
-            required: false,
-            default: false
         }
     },
+    components: { AuText },
     data() {
         return {
-            isCollapsed: this.collapsed
+            isCollapsed: this.defaultCollapsed,
+            contentHeight: 0
         }
+    },
+    mounted() {
+        window.addEventListener("load", () => {
+            this.changeMaxHeightToContent()
+        })
     },
     methods: {
         onCollapse () {
-            this.isCollapsed = !this.isCollapsed
+            if (this.collapsable && !this.animating) {
+                this.isCollapsed = !this.isCollapsed
 
-            /**
-             * Evento click.
-             * @property {Boolean} isCollapsed valor que posee la propiedad collapsed
-             */
-            this.$emit('collapse', this.isCollapsed)
+                this.changeMaxHeightToContent()
+
+                /**
+                 * Evento click.
+                 * @property {Boolean} isCollapsed valor que posee la propiedad collapsed
+                 */
+                this.$emit('collapse', this.isCollapsed)
+            }
         },
 
-        onClick () {
-            if (this.clickable)
-                /**
-                 * Evento que se gatilla cuando se presiona sobre el body de la tarjeta (card).
-                 * Este evento sólo es llamado si la prop clickeable está como true.
-                 */
-                this.$emit('click')
+        changeMaxHeightToContent() {
+            if (this.isCollapsed)
+                this.$refs.body.style.maxHeight = 0
+            else
+                this.$refs.body.style.maxHeight = this.$refs.body.scrollHeight + "px"
         }
     }
 }

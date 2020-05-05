@@ -1,11 +1,13 @@
 /*
  * Globals
  */
-@import "globals/fonts";
 @import "globals/colors";
+@import "globals/fonts";
+@import "globals/body";
 
 /*
  * Components
  */
 @import "components/text";
 @import "components/button";
+@import "components/card";
