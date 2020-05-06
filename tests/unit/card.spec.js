@@ -1,5 +1,9 @@
+import Vue from 'vue'
 import { mount, shallowMount } from '@vue/test-utils'
 import AuCard from '@/components/data_display/AuCard.vue'
+import AuIcons from './../../aur-icons'
+
+Vue.use(AuIcons)
 
 describe('Componente AuCard', () => {
 
@@ -8,23 +12,23 @@ describe('Componente AuCard', () => {
     title: '',
     description: '',
     collapsable: false,
-    defaultCollapse: false,
+    defaultCollapsed: false,
     hoverable: false
   }
 
   test('el componente tiene nombre', () => {
-    const wrapper = mount(AuCard);
+    const wrapper = shallowMount(AuCard);
     expect(wrapper.name()).toBe('AuCard');
   })
 
   test('la prop title debe ser por defecto ' + defaultData.title, () => {
-    let wrapper = mount(AuCard);
+    let wrapper = shallowMount(AuCard);
     expect(wrapper.vm.title).toBeDefined();
     expect(wrapper.vm.title).toBe(defaultData.title);
   })
 
   test('la prop title es renderizada dentro del wrapper del título', () => {
-    let wrapper = mount(AuCard, {
+    let wrapper = shallowMount(AuCard, {
       propsData: {
         title: 'Título del card'
       }
@@ -34,13 +38,13 @@ describe('Componente AuCard', () => {
   })
 
   test('la prop description debe ser por defecto ' + defaultData.description, () => {
-    let wrapper = mount(AuCard);
+    let wrapper = shallowMount(AuCard);
     expect(wrapper.vm.description).toBeDefined();
     expect(wrapper.vm.description).toBe(defaultData.description);
   })
 
   test('la prop description es renderizada dentro del wrapper del título', () => {
-    let wrapper = mount(AuCard, {
+    let wrapper = shallowMount(AuCard, {
       propsData: {
         title: 'Descripción del card'
       }
@@ -49,20 +53,20 @@ describe('Componente AuCard', () => {
     expect(titleWrapper.text()).toContain('Descripción del card');
   })
 
-  test('la prop defaultCollapse debe ser por defecto ' + defaultData.defaultCollapse, () => {
-    let wrapper = mount(AuCard);
-    expect(wrapper.vm.defaultCollapse).toBeDefined();
-    expect(wrapper.vm.defaultCollapse).toBe(defaultData.defaultCollapse);
+  test('la prop defaultCollapsed debe ser por defecto ' + defaultData.defaultCollapsed, () => {
+    let wrapper = shallowMount(AuCard);
+    expect(wrapper.vm.defaultCollapsed).toBeDefined();
+    expect(wrapper.vm.defaultCollapsed).toBe(defaultData.defaultCollapsed);
   })
 
   test('la prop collapsable debe ser por defecto ' + defaultData.collapsable, () => {
-    let wrapper = mount(AuCard);
+    let wrapper = shallowMount(AuCard);
     expect(wrapper.vm.collapsable).toBeDefined();
     expect(wrapper.vm.collapsable).toBe(defaultData.collapsable);
   })
 
   test('la prop collapsable es renderizada en el wrapper del componente', () => {
-    let wrapper = mount(AuCard, {
+    let wrapper = shallowMount(AuCard, {
       propsData: {
         collapsable: true
       }
@@ -71,13 +75,13 @@ describe('Componente AuCard', () => {
   })
 
   test('la prop hoverable debe ser por defecto ' + defaultData.hoverable, () => {
-    let wrapper = mount(AuCard);
+    let wrapper = shallowMount(AuCard);
     expect(wrapper.vm.hoverable).toBeDefined();
     expect(wrapper.vm.hoverable).toBe(defaultData.hoverable);
   })
 
   test('la prop hoverable es renderizada en el wrapper del componente', () => {
-    let wrapper = mount(AuCard, {
+    let wrapper = shallowMount(AuCard, {
       propsData: {
         hoverable: true
       }
@@ -85,17 +89,19 @@ describe('Componente AuCard', () => {
     expect(wrapper.find('.au-card').attributes()).toHaveProperty('au-hoverable');
   })
 
-  test('el método onCollapse es llamado cuando se hace click sobre la barra superior', () => {
+  test('el método onCollapse es llamado cuando se hace click sobre el icono superior derecho', () => {
     const onCollapse = jest.fn();
     let wrapper = mount(AuCard, {
+      propsData: {
+        collapsable: true
+      },
       methods: {
         onCollapse
       }
     });
 
-    let header = wrapper.find('.header');
-    header.trigger('click');
-
+    let icon = wrapper.find('.icon-section > *');
+    icon.trigger('click');
     expect(onCollapse).toHaveBeenCalledTimes(1);
   })
 
@@ -104,16 +110,17 @@ describe('Componente AuCard', () => {
       propsData: {
         collapsable: true
       }
-    }),
-    header = wrapper.find('.header');
-    header.trigger('click');
+    });
+
+    expect(wrapper.contains('.icon-section')).toBe(true);
+
+    let icon = wrapper.find('.icon-section > *');
+    icon.trigger('click');
     expect(wrapper.emitted().collapse).toBeTruthy();
 
     // collapsable es false o undefined
     wrapper = mount(AuCard);
-    header = wrapper.find('.header');
-    header.trigger('click');
-    expect(wrapper.emitted().collapse).toBeFalsy();
+    expect(wrapper.contains('.icon-section')).toBe(false);
   })
 
   test('el componente renderiza el slot default', () => {
