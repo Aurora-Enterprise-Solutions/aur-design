@@ -20,6 +20,10 @@ module.exports = {
 				{
 					name: 'General',
 					components: 'src/components/general/[A-Z]*.vue'
+                },
+                {
+					name: 'Visualización',
+					components: 'src/components/data_display/[A-Z]*.vue'
 				}
 			]
 		}

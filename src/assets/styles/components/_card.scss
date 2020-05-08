@@ -1,0 +1,75 @@
+/*
+ * CARD
+ */
+
+.au-card {
+    background-color: $color-white;
+    border: solid 0.4px $color-border;
+    border-radius: 4px;
+    box-shadow: $color-border 0px 3px 16px -5px;
+    height: 100%;
+    transition: transform 0.3s,
+                box-shadow 0.3s;
+
+    & > .header {
+        border-bottom: solid 0.4px $color-border;
+        display: flex;
+        align-items: stretch;
+
+        .title-section {
+            flex-grow: 1;
+            padding: 8px 15px;
+
+            & > .au-text {
+                &:nth-child(1) {
+                    margin: 0 0 4px 0;
+                    * {
+                        margin: 0;
+                    }
+                }
+
+                &:nth-child(2) {
+                    * {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .extra-section {
+            flex-grow: 0;
+            padding: 8px 15px 8px 0;
+        }
+    }
+
+    & > .body {
+        overflow: auto;
+        position: relative;
+        opacity: 1;
+        transition: max-height 0.4s ease-in-out,
+                    opacity 0.3s 0.4s ease-in;
+
+        & > * {
+            padding: 8px 15px;
+        }
+    }
+
+    // States
+    &[au-hoverable]:hover {
+        position: relative;
+        transform: scale(1.02);
+        box-shadow: $color-border 0px 3px 10px 2px;
+    }
+
+    &[au-collapsable] {
+        .icon-section {
+            padding: 12px 15px 4px 0;
+        }
+    }
+
+    &[au-collapsed] > .body {
+        opacity: 0;
+        transition: opacity 0.3s ease-in,
+                    max-height 0.4s 0.3s ease-in-out;
+    }
+}
