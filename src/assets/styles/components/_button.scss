@@ -51,4 +51,13 @@
     &[au-color="hight"] {
         @include setAuButton($color-hight-contrast, $color-white, $color-white, $color-hight-contrast);
     }
+
+    // Block
+    &[au-block] {
+        display: block;
+
+        button {
+            width: 100%;
+        }
+    }
 }

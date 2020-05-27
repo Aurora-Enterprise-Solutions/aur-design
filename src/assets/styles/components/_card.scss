@@ -7,13 +7,13 @@
     border: solid 0.4px $color-border;
     border-radius: 4px;
     box-shadow: $color-border 0px 3px 16px -5px;
-    height: 100%;
     transition: transform 0.3s,
                 box-shadow 0.3s;
 
     & > .header {
         border-bottom: solid 0.4px $color-border;
         display: flex;
+        flex-wrap: wrap;
         align-items: stretch;
 
         .title-section {

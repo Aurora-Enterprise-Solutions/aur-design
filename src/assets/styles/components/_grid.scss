@@ -1,0 +1,13 @@
+.au-row {
+    display: flex;
+}
+
+.au-col {
+    @for $i from 1 through 24 {
+        &-#{$i} {
+            display: block;
+            box-sizing: border-box;
+            width: (($i * 100) / 24)#{'%'};
+        }
+    }
+}
