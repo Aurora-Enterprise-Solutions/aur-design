@@ -92,6 +92,9 @@ export default {
             this.changeMaxHeightToContent()
         })
     },
+    updated() {
+        this.changeMaxHeightToContent()
+    },
     methods: {
         onCollapse () {
             if (this.collapsable && !this.animating) {

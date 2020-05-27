@@ -13,6 +13,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 
 - [x] Text
 - [x] Button
+- [x] Grid (row, col)
 - [ ] Input
 - [ ] InputNumber
 - [ ] DatePicker
@@ -22,7 +23,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [ ] Slider
 - [ ] Switch
 - [ ] Badge
-- [ ] Card
+- [x] Card
 - [ ] Collapse
 - [ ] Comment
 - [ ] Table

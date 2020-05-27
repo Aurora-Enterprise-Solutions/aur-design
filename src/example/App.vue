@@ -13,18 +13,20 @@
         </div>
       </div>
       <div>
-        <div class="text-header-display">
-          <au-text tag="h1">H1</au-text>
-          <au-text tag="h2">H2</au-text>
-          <au-text tag="h3">H3</au-text>
-          <au-text tag="h4">H4</au-text>
-          <au-text tag="h5">H5</au-text>
-          <au-text tag="h6">H6</au-text>
-        </div>
+        <au-row :gutter="16" wrap="wrap" align="baseline">
+          <au-col><au-text tag="h1">H1</au-text></au-col>
+          <au-col><au-text tag="h2">H2</au-text></au-col>
+          <au-col><au-text tag="h3">H3</au-text></au-col>
+          <au-col><au-text tag="h4">H4</au-text></au-col>
+          <au-col><au-text tag="h5">H5</au-text></au-col>
+          <au-col><au-text tag="h6">H6</au-text></au-col>
+        </au-row>
 
-        <div class="text-p-display">
-          <au-text tag="p">paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sapiente, facilis saepe aliquid consectetur in eligendi rerum architecto cumque at ipsa beatae fugit nisi ipsum eos ratione, debitis placeat? Optio.</au-text>
-        </div>
+        <au-row :gutter="16" wrap="wrap">
+          <au-col>
+            <au-text tag="p">paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sapiente, facilis saepe aliquid consectetur in eligendi rerum architecto cumque at ipsa beatae fugit nisi ipsum eos ratione, debitis placeat? Optio.</au-text>
+          </au-col>
+        </au-row>
       </div>
     </au-card>
 
@@ -40,11 +42,17 @@
         </div>
       </div>
       <div>
-        <div class="buttons-display">
-          <au-button color="primary" :disabled="false" @click="buttonClick">Primary</au-button>
-          <au-button color="hight" :disabled="false" @click="buttonClick">Hight Contrast</au-button>
-          <au-button :disabled="true" @click="buttonClick">Disabled</au-button>
-        </div>
+        <au-row :gutter="[16, 8]" wrap="wrap">
+          <au-col>
+            <au-button color="primary" :disabled="false" @click="buttonClick">Primary</au-button>
+          </au-col>
+          <au-col>
+            <au-button color="hight" :disabled="false" @click="buttonClick">Hight Contrast</au-button>
+          </au-col>
+          <au-col :span="0">
+            <au-button :disabled="true" @click="buttonClick">Disabled</au-button>
+          </au-col>
+        </au-row>
       </div>
     </au-card>
 
@@ -61,23 +69,27 @@
       </div>
 
       <div>
-        <div class="card-display">
+        <au-row :gutter="16" wrap="wrap">
+          <au-col :span="8">
+            <au-card title="Normal Card" description="Esta es la descripción de esta tarjeta.">
+              <div style="height: 100px"></div>
+            </au-card>
+          </au-col>
 
-          <au-card title="Normal Card" description="Esta es la descripción de esta tarjeta.">
-            <div style="height: 100px"></div>
-          </au-card>
+          <au-col :span="8">
+            <au-card title="Collapse Card" description="Esta tarjeta se puede esconder su contenido." :collapsable="true" :default-collapsed="true">
+              <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+                <au-text tag="span" style-text="color: #95afb9; font-size: 0.7rem">CONTENIDO DE LA TARJETA</au-text>
+              </div>
+            </au-card>
+          </au-col>
 
-          <au-card title="Collapse Card" description="Esta tarjeta se puede esconder su contenido." :collapsable="true" :default-collapsed="true">
-            <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
-              <au-text tag="span" style-text="color: #95afb9; font-size: 0.7rem">CONTENIDO DE LA TARJETA</au-text>
-            </div>
-          </au-card>
-
-          <au-card title="Hoverable Card" description="Esta tarjeta se muestra con mayor intensidad." :hoverable="true">
-            <div style="height: 100px"></div>
-          </au-card>
-          
-        </div>
+          <au-col :span="8">
+            <au-card title="Hoverable Card" description="Esta tarjeta se muestra con mayor intensidad." :hoverable="true">
+              <div style="height: 100px"></div>
+            </au-card>
+          </au-col>
+        </au-row>
       </div>
     </au-card>
   </div>
@@ -87,10 +99,12 @@
   import AuCard from './../components/data_display/AuCard'
   import AuText from './../components/general/AuText'
   import AuButton from './../components/general/AuButton'
+  import AuRow from './../components/general/AuRow'
+  import AuCol from './../components/general/AuCol'
 
   export default {
     name: 'App',
-    components: { AuCard, AuText, AuButton },
+    components: { AuCard, AuText, AuButton, AuRow, AuCol },
     methods: {
       buttonClick(event) {
         console.log('Button Click!', event);

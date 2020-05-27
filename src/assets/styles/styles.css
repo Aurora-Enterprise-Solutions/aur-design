@@ -96,6 +96,154 @@ body {
 /*
  * Components
  */
+.au-row {
+  display: flex;
+}
+
+.au-col-1 {
+  display: block;
+  box-sizing: border-box;
+  width: 4.16667%;
+}
+
+.au-col-2 {
+  display: block;
+  box-sizing: border-box;
+  width: 8.33333%;
+}
+
+.au-col-3 {
+  display: block;
+  box-sizing: border-box;
+  width: 12.5%;
+}
+
+.au-col-4 {
+  display: block;
+  box-sizing: border-box;
+  width: 16.66667%;
+}
+
+.au-col-5 {
+  display: block;
+  box-sizing: border-box;
+  width: 20.83333%;
+}
+
+.au-col-6 {
+  display: block;
+  box-sizing: border-box;
+  width: 25%;
+}
+
+.au-col-7 {
+  display: block;
+  box-sizing: border-box;
+  width: 29.16667%;
+}
+
+.au-col-8 {
+  display: block;
+  box-sizing: border-box;
+  width: 33.33333%;
+}
+
+.au-col-9 {
+  display: block;
+  box-sizing: border-box;
+  width: 37.5%;
+}
+
+.au-col-10 {
+  display: block;
+  box-sizing: border-box;
+  width: 41.66667%;
+}
+
+.au-col-11 {
+  display: block;
+  box-sizing: border-box;
+  width: 45.83333%;
+}
+
+.au-col-12 {
+  display: block;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.au-col-13 {
+  display: block;
+  box-sizing: border-box;
+  width: 54.16667%;
+}
+
+.au-col-14 {
+  display: block;
+  box-sizing: border-box;
+  width: 58.33333%;
+}
+
+.au-col-15 {
+  display: block;
+  box-sizing: border-box;
+  width: 62.5%;
+}
+
+.au-col-16 {
+  display: block;
+  box-sizing: border-box;
+  width: 66.66667%;
+}
+
+.au-col-17 {
+  display: block;
+  box-sizing: border-box;
+  width: 70.83333%;
+}
+
+.au-col-18 {
+  display: block;
+  box-sizing: border-box;
+  width: 75%;
+}
+
+.au-col-19 {
+  display: block;
+  box-sizing: border-box;
+  width: 79.16667%;
+}
+
+.au-col-20 {
+  display: block;
+  box-sizing: border-box;
+  width: 83.33333%;
+}
+
+.au-col-21 {
+  display: block;
+  box-sizing: border-box;
+  width: 87.5%;
+}
+
+.au-col-22 {
+  display: block;
+  box-sizing: border-box;
+  width: 91.66667%;
+}
+
+.au-col-23 {
+  display: block;
+  box-sizing: border-box;
+  width: 95.83333%;
+}
+
+.au-col-24 {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 /*
  * TEXT
  */
@@ -225,6 +373,14 @@ body {
   pointer-events: none;
 }
 
+.au-button[au-block] {
+  display: block;
+}
+
+.au-button[au-block] button {
+  width: 100%;
+}
+
 /*
  * CARD
  */
@@ -233,13 +389,13 @@ body {
   border: solid 0.4px #e4e4e4;
   border-radius: 4px;
   box-shadow: #e4e4e4 0px 3px 16px -5px;
-  height: 100%;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .au-card > .header {
   border-bottom: solid 0.4px #e4e4e4;
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
 }
 
