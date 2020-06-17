@@ -1,0 +1,88 @@
+$iterator: 0;
+$limit: 3;
+
+@mixin au-navigator-link ($iterator, $limit){
+    @if $iterator < $limit {
+        .au-navigator-link {
+            .label-wrapper {
+                padding: 8px 10px;
+                padding-left: 10px + $iterator * 10px;
+                padding-right: 30px;
+                cursor: pointer;
+                display: flex;
+                transition-duration: 0.4s;
+    
+                .au-text span {
+                    color: inherit;
+                    transition-duration: 0.4s;
+                }
+    
+                .icon {
+                    width: 0.9rem;
+                    margin-right: 10px;
+                    display: flex;
+    
+                    .au-icon {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+    
+                        & > div {
+                            width: 100% !important;
+                            display: flex;
+                            align-items: center;
+    
+                            svg {
+                                width: 100% !important;
+    
+                                *[au-colorable] {
+                                    transition-duration: 0.4s;
+                                    stroke: $color-hight-contrast;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                &:hover {
+                    background-color: $color-hight-contrast;
+    
+                    .au-text {
+                        color: $color-white;
+                    }
+    
+                    .au-icon > div svg {
+                        *[au-colorable] {
+                            stroke: $color-white;
+                        }
+                    }
+                }
+            }
+
+            .sub-menu {
+                @include au-navigator-link($iterator + 1, $limit);
+                opacity: 0;
+                transition: opacity 0.3s ease-in,
+                            max-height 0.4s 0.3s ease-in-out;
+
+                &[expanded] {
+                    opacity: 1;
+                    transition: opacity 0.3s 0.4s ease-in,
+                                max-height 0.4s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.au-navigator {
+    overflow: auto;
+
+    // au-navigator-content
+    &-content {
+        width: 100%;
+    }
+
+    // au-navigator-link
+    @include au-navigator-link($iterator, $limit);
+}

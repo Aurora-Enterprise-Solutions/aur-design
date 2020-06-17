@@ -1,14 +1,22 @@
 {
-  "name": "ui-components",
+  "name": "@aurora-enterprise-solutions/aur-design",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "jest --verbose",
     "test:watch": "jest --watch --verbose",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
-    "styleguide:build": "vue-styleguidist build --config styleguide.config.js"
+    "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
+    "push": "np --skip-2fa --no-publish",
+    "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -36,6 +44,8 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest",
-    "modulePathIgnorePatterns": ["<rootDir>/aur-icons/"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/aur-icons/"
+    ]
   }
 }
