@@ -1,0 +1,103 @@
+$iterator: 0;
+$limit: 3;
+
+@mixin au-navigator-link-active () {
+    .au-text {
+        color: $color-caribbean-green;
+    }
+
+    .icon .au-icon {
+        fill: $color-caribbean-green;
+        stroke: $color-caribbean-green;
+    }
+}
+
+@mixin au-navigator-link ($iterator, $limit){
+    @if $iterator < $limit {
+        .au-navigator-link {
+
+            .label-wrapper {
+                position: relative;
+                padding: 8px 10px;
+                padding-left: 10px + $iterator * 10px;
+                padding-right: 30px;
+                cursor: pointer;
+                display: flex;
+                transition-duration: 0.4s;
+    
+                .au-text span {
+                    color: inherit;
+                    transition-duration: 0.4s;
+                }
+    
+                .icon {
+                    width: 0.9rem;
+                    margin-right: 10px;
+                    display: flex;
+    
+                    .au-icon {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        fill: $color-hight-contrast;
+                        stroke: $color-hight-contrast;
+                    }
+
+                    &.chevron {
+                        margin: 0;
+                        position: absolute;
+                        right: 5px;
+                        align-self: flex-end;
+                        transform: rotateZ(180deg);
+                        transition: transform 0.3s ease;
+                    }
+                }
+    
+                &:hover {
+                    @include au-navigator-link-active()
+                }
+            }
+
+            &.active {
+                & > .label-wrapper {
+                    @include au-navigator-link-active()
+                }
+            }
+
+            &[expanded] {
+                .label-wrapper {
+                    .icon {
+                        &.chevron {
+                            transform: rotateZ(0deg);
+                        }
+                    }
+                }
+            }
+
+            .sub-menu {
+                @include au-navigator-link($iterator + 1, $limit);
+                opacity: 0;
+                transition: opacity 0.3s ease-in,
+                            max-height 0.4s 0.3s ease-in-out;
+
+                &[expanded] {
+                    opacity: 1;
+                    transition: opacity 0.3s 0.4s ease-in,
+                                max-height 0.4s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.au-navigator {
+    overflow: auto;
+
+    // au-navigator-content
+    &-content {
+        width: 100%;
+    }
+
+    // au-navigator-link
+    @include au-navigator-link($iterator, $limit);
+}

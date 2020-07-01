@@ -1,11 +1,12 @@
 # Aurora Design
 
-Aurora Design es un proyecto dedicado a generar componentes para la interfaz de usuario (UI) del proyecto Aurora. Este está construido de manera pura, es decir, sin tener como base algún otro framework de CSS. Así, sus propiedades, métodos, eventos, etc. son posibles de desarrollar fácilmente gracias al framework vue.js.
+Aurora Design es un proyecto dedicado a generar componentes para la interfaz de usuario (UI) del proyecto Aurora Saas. Este está construido en base al framework de Vue.js con el propósito de utilizar todas sus características, y así, una construcción rápida, ligera y eficiente.
 
 ## Contenido
 
 * [Componentes](#componentes)
 * [Licencia](#licencia)
+* [Atribucion](#atribucion)
 
 ## Componentes
 
@@ -14,6 +15,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [x] Text
 - [x] Button
 - [x] Grid (row, col)
+- [x] Navigator
 - [ ] Input
 - [ ] InputNumber
 - [ ] DatePicker

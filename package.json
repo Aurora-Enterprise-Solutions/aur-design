@@ -1,17 +1,27 @@
 {
-  "name": "ui-components",
+  "name": "@aurora-enterprise-solutions/aur-design",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "jest --verbose",
     "test:watch": "jest --watch --verbose",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
-    "styleguide:build": "vue-styleguidist build --config styleguide.config.js"
+    "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
+    "push": "np --skip-2fa --no-publish",
+    "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link"
   },
   "dependencies": {
+    "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "core-js": "^3.6.4",
+    "lodash": "^4.17.15",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -20,6 +30,7 @@
     "@vue/cli-service": "^4.2.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-loader": "^8.1.0",
+    "jest-canvas-mock": "^2.2.0",
     "node-sass": "^4.13.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
@@ -35,7 +46,15 @@
     "last 2 versions"
   ],
   "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
     "preset": "@vue/cli-plugin-unit-jest",
-    "modulePathIgnorePatterns": ["<rootDir>/aur-icons/"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/aur-icons/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@aurora-enterprise-solutions)/)"
+    ]
   }
 }

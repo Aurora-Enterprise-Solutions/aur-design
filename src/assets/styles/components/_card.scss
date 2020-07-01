@@ -13,8 +13,9 @@
     & > .header {
         border-bottom: solid 0.4px $color-border;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: stretch;
+        overflow: auto;
 
         .title-section {
             flex-grow: 1;
