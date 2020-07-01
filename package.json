@@ -19,6 +19,7 @@
     "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link"
   },
   "dependencies": {
+    "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "vue": "^2.6.11"
@@ -29,6 +30,7 @@
     "@vue/cli-service": "^4.2.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-loader": "^8.1.0",
+    "jest-canvas-mock": "^2.2.0",
     "node-sass": "^4.13.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
@@ -44,9 +46,15 @@
     "last 2 versions"
   ],
   "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
     "preset": "@vue/cli-plugin-unit-jest",
     "modulePathIgnorePatterns": [
       "<rootDir>/aur-icons/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@aurora-enterprise-solutions)/)"
     ]
   }
 }
