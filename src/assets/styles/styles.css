@@ -395,8 +395,9 @@ body {
 .au-card > .header {
   border-bottom: solid 0.4px #e4e4e4;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: stretch;
+  overflow: auto;
 }
 
 .au-card > .header .title-section {
@@ -456,6 +457,7 @@ body {
 }
 
 .au-navigator .au-navigator-link .label-wrapper {
+  position: relative;
   padding: 8px 10px;
   padding-left: 10px;
   padding-right: 30px;
@@ -479,33 +481,39 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.au-navigator .au-navigator-link .label-wrapper .icon .au-icon > div {
-  width: 100% !important;
-  display: flex;
-  align-items: center;
-}
-
-.au-navigator .au-navigator-link .label-wrapper .icon .au-icon > div svg {
-  width: 100% !important;
-}
-
-.au-navigator .au-navigator-link .label-wrapper .icon .au-icon > div svg *[au-colorable] {
-  transition-duration: 0.4s;
+  fill: #20324A;
   stroke: #20324A;
 }
 
-.au-navigator .au-navigator-link .label-wrapper:hover {
-  background-color: #20324A;
+.au-navigator .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
 }
 
 .au-navigator .au-navigator-link .label-wrapper:hover .au-text {
-  color: #FFFFFF;
+  color: #07D79C;
 }
 
-.au-navigator .au-navigator-link .label-wrapper:hover .au-icon > div svg *[au-colorable] {
-  stroke: #FFFFFF;
+.au-navigator .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
 }
 
 .au-navigator .au-navigator-link .sub-menu {
@@ -514,6 +522,7 @@ body {
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper {
+  position: relative;
   padding: 8px 10px;
   padding-left: 20px;
   padding-right: 30px;
@@ -537,33 +546,39 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div {
-  width: 100% !important;
-  display: flex;
-  align-items: center;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div svg {
-  width: 100% !important;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div svg *[au-colorable] {
-  transition-duration: 0.4s;
+  fill: #20324A;
   stroke: #20324A;
 }
 
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover {
-  background-color: #20324A;
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
-  color: #FFFFFF;
+  color: #07D79C;
 }
 
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-icon > div svg *[au-colorable] {
-  stroke: #FFFFFF;
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu {
@@ -572,6 +587,7 @@ body {
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper {
+  position: relative;
   padding: 8px 10px;
   padding-left: 30px;
   padding-right: 30px;
@@ -595,33 +611,39 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div {
-  width: 100% !important;
-  display: flex;
-  align-items: center;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div svg {
-  width: 100% !important;
-}
-
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon > div svg *[au-colorable] {
-  transition-duration: 0.4s;
+  fill: #20324A;
   stroke: #20324A;
 }
 
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover {
-  background-color: #20324A;
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
-  color: #FFFFFF;
+  color: #07D79C;
 }
 
-.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-icon > div svg *[au-colorable] {
-  stroke: #FFFFFF;
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .sub-menu {

@@ -1,10 +1,23 @@
 $iterator: 0;
 $limit: 3;
 
+@mixin au-navigator-link-active () {
+    .au-text {
+        color: $color-caribbean-green;
+    }
+
+    .icon .au-icon {
+        fill: $color-caribbean-green;
+        stroke: $color-caribbean-green;
+    }
+}
+
 @mixin au-navigator-link ($iterator, $limit){
     @if $iterator < $limit {
         .au-navigator-link {
+
             .label-wrapper {
+                position: relative;
                 padding: 8px 10px;
                 padding-left: 10px + $iterator * 10px;
                 padding-right: 30px;
@@ -26,34 +39,36 @@ $limit: 3;
                         width: 100%;
                         display: flex;
                         align-items: center;
-    
-                        & > div {
-                            width: 100% !important;
-                            display: flex;
-                            align-items: center;
-    
-                            svg {
-                                width: 100% !important;
-    
-                                *[au-colorable] {
-                                    transition-duration: 0.4s;
-                                    stroke: $color-hight-contrast;
-                                }
-                            }
-                        }
+                        fill: $color-hight-contrast;
+                        stroke: $color-hight-contrast;
+                    }
+
+                    &.chevron {
+                        margin: 0;
+                        position: absolute;
+                        right: 5px;
+                        align-self: flex-end;
+                        transform: rotateZ(180deg);
+                        transition: transform 0.3s ease;
                     }
                 }
     
                 &:hover {
-                    background-color: $color-hight-contrast;
-    
-                    .au-text {
-                        color: $color-white;
-                    }
-    
-                    .au-icon > div svg {
-                        *[au-colorable] {
-                            stroke: $color-white;
+                    @include au-navigator-link-active()
+                }
+            }
+
+            &.active {
+                & > .label-wrapper {
+                    @include au-navigator-link-active()
+                }
+            }
+
+            &[expanded] {
+                .label-wrapper {
+                    .icon {
+                        &.chevron {
+                            transform: rotateZ(0deg);
                         }
                     }
                 }

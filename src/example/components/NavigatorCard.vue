@@ -13,7 +13,7 @@
             <div>
                 <au-row :gutter="16">
                     <au-col>
-                        <au-navigator :config="config" />
+                        <au-navigator v-model="selected" link-key="id" :config="config" />
                     </au-col>
                 </au-row>
             </div>
@@ -26,8 +26,9 @@ export default {
     name: 'NavigatorCard',
     data() {
         return {
+            selected: 'section-ab',
             config: [
-                { id: 'home', label: 'Home', icon: 'minus-square', menu: [
+                { id: 'home', label: 'Home', icon: 'home', menu: [
                     { id: 'section-a', label: 'Section A', to: '/section-a', menu: [
                         { id: 'section-aa', label: 'Section AA', to: '/section-aa' },
                         { id: 'section-ab', label: 'Section AB', to: '/section-ab' }
@@ -35,8 +36,8 @@ export default {
                     { id: 'section-b', label: 'Section B', to: '/section-b' },
                     { id: 'section-c', label: 'Section C', to: '/section-c' }
                 ] },
-                { id: 'about-us', label: 'About us', to: '/about-us' },
-                { id: 'contact', label: 'Contact', to: '/contact', icon: 'contact' },
+                { id: 'about-us', label: 'About us', icon: 'info_circle', to: '/about-us' },
+                { id: 'contact', label: 'Contact', icon: 'phone', to: '/contact' }
             ]
         }
     }
