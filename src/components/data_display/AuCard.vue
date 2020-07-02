@@ -17,8 +17,10 @@
             </div>
 
             <div v-if="collapsable == true" class="icon-section">
-                <plus-square v-if="isCollapsed" width="1rem" :animatable="true" :hoverable="true" :clickable="true" @click="onCollapse"></plus-square>
-                <minus-square v-else width="1rem" :animatable="true" :hoverable="true" :clickable="true" @click="onCollapse"></minus-square>
+                <div v-if="isCollapsed">
+                    <au-icon icon="plus_square" :animatable="true" :clickable="true" @click="onCollapse"></au-icon>
+                </div>
+                <au-icon v-else msg="minus_square" icon="minus_square" :animatable="true" :clickable="true" @click="onCollapse"></au-icon>
             </div>
         </div>
 
@@ -97,7 +99,7 @@ export default {
     },
     methods: {
         onCollapse () {
-            if (this.collapsable && !this.animating) {
+            if (this.collapsable) {
                 this.isCollapsed = !this.isCollapsed
 
                 this.changeMaxHeightToContent()

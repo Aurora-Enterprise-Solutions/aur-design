@@ -395,8 +395,9 @@ body {
 .au-card > .header {
   border-bottom: solid 0.4px #e4e4e4;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: stretch;
+  overflow: auto;
 }
 
 .au-card > .header .title-section {
@@ -445,5 +446,223 @@ body {
 .au-card[au-collapsed] > .body {
   opacity: 0;
   transition: opacity 0.3s ease-in, max-height 0.4s 0.3s ease-in-out;
+}
+
+.au-navigator {
+  overflow: auto;
+}
+
+.au-navigator-content {
+  width: 100%;
+}
+
+.au-navigator .au-navigator-link .label-wrapper {
+  position: relative;
+  padding: 8px 10px;
+  padding-left: 10px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .label-wrapper .au-text span {
+  color: inherit;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .label-wrapper .icon {
+  width: 0.9rem;
+  margin-right: 10px;
+  display: flex;
+}
+
+.au-navigator .au-navigator-link .label-wrapper .icon .au-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  fill: #20324A;
+  stroke: #20324A;
+}
+
+.au-navigator .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
+}
+
+.au-navigator .au-navigator-link .label-wrapper:hover .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
+}
+
+.au-navigator .au-navigator-link .sub-menu {
+  opacity: 0;
+  transition: opacity 0.3s ease-in, max-height 0.4s 0.3s ease-in-out;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper {
+  position: relative;
+  padding: 8px 10px;
+  padding-left: 20px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .au-text span {
+  color: inherit;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon {
+  width: 0.9rem;
+  margin-right: 10px;
+  display: flex;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  fill: #20324A;
+  stroke: #20324A;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu {
+  opacity: 0;
+  transition: opacity 0.3s ease-in, max-height 0.4s 0.3s ease-in-out;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper {
+  position: relative;
+  padding: 8px 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .au-text span {
+  color: inherit;
+  transition-duration: 0.4s;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon {
+  width: 0.9rem;
+  margin-right: 10px;
+  display: flex;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon .au-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  fill: #20324A;
+  stroke: #20324A;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
+  color: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
+  fill: #07D79C;
+  stroke: #07D79C;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
+  transform: rotateZ(0deg);
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .sub-menu {
+  opacity: 0;
+  transition: opacity 0.3s ease-in, max-height 0.4s 0.3s ease-in-out;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .sub-menu[expanded] {
+  opacity: 1;
+  transition: opacity 0.3s 0.4s ease-in, max-height 0.4s ease-in-out;
+}
+
+.au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu[expanded] {
+  opacity: 1;
+  transition: opacity 0.3s 0.4s ease-in, max-height 0.4s ease-in-out;
+}
+
+.au-navigator .au-navigator-link .sub-menu[expanded] {
+  opacity: 1;
+  transition: opacity 0.3s 0.4s ease-in, max-height 0.4s ease-in-out;
 }
 /*# sourceMappingURL=styles.css.map */
