@@ -1,18 +1,4 @@
 steps:
-- name: gcr.io/cloud-builders/git
-  entrypoint: 'bash'
-  env: ['GIT_DISCOVERY_ACROSS_FILESYSTEM=1']
-  args:
-    - '-c'
-    - |
-      git init
-      git clean  -d  -f .
-      git remote add origin https://source.developers.google.com/p/$PROJECT_ID/r/github_aurora-enterprise-solutions_aur-design
-      git fetch origin $BRANCH_NAME
-      git checkout $COMMIT_SHA
-      git config -f .gitmodules submodule.aur-icons.url https://source.developers.google.com/p/$PROJECT_ID/r/github_aurora-enterprise-solutions_aur-icons
-      git submodule init
-      git submodule update
 - name: node:12
   entrypoint: yarn
   args: ['install']
