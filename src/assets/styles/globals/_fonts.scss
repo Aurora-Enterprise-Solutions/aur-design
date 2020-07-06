@@ -45,10 +45,9 @@ $font-family-header: Eina, Helvetica;
 $font-family-regular: Inter, Helvetica;
 
 /*
- * Font-color
+ * Font-size
  */
-$font-color-header: $color-title;
-$font-color-regular: $color-paragraph;
+$font-size-regular: 0.8rem;
 
 /*
  * Font-weight
@@ -79,9 +78,9 @@ $font-weight-black: 900;
  * Font styles
  */
 h1, h2, h3, h4, h5, h6 {
-    color: $font-color-header;
+    color: var(--color-title);
 }
 
 label, span, p {
-    color: $font-color-regular;
+    color: var(--color-paragraph);
 }

@@ -1,25 +1,21 @@
 /*
  * COLORS
  */
-$color-white: #FFFFFF;
-$color-title: #191919;
-$color-paragraph: #515151;
-$color-placeholder: #888888;
-$color-border: rgb(228, 228, 228);
-$color-disabled: #D3D9E1;
-$color-background: #f5f8fe; //E6EEF9 ecedf2 f5f8fe
-$color-caribbean-green: #07D79C;
-$color-caribbean-green-hover: #02C38D;
-$color-hight-contrast: #20324A;
-$color-dodger-blue: #2C7DFA;
-$color-egyptian-blue: #0F36A5;
-$color-midnight-blue: #141F72;
-$color-portage: #8B91DD;
-$color-radical-red: #F6576E;
-$color-atomic-tangerine: #FF9041;
-
-/*
- * OVERRIDE AURORA ICON COLOR VARIABLES
- */
 :root {
+    --color-white: #FFFFFF;
+    --color-title: #191919;
+    --color-paragraph: #515151;
+    --color-placeholder: #888888;
+    --color-border: rgb(228, 228, 228);
+    --color-disabled: #D3D9E1;
+    --color-background: #f5f8fe; //E6EEF9 ecedf2 f5f8fe
+    --color-caribbean-green: #07D79C;
+    --color-caribbean-green-hover: #02C38D;
+    --color-hight-contrast: #20324A;
+    --color-dodger-blue: #2C7DFA;
+    --color-egyptian-blue: #0F36A5;
+    --color-midnight-blue: #141F72;
+    --color-portage: #8B91DD;
+    --color-radical-red: #F6576E;
+    --color-atomic-tangerine: #FF9041;
 }
