@@ -22,6 +22,10 @@ import AuNavigator from './components/data_display/AuNavigator'
 Vue.component('au-navigator', AuNavigator)
 import AuNavigatorLink from './components/data_display/AuNavigatorLink'
 Vue.component('au-navigator-link', AuNavigatorLink)
+import AuInput from './components/data_entry/AuInput'
+Vue.component('au-input', AuInput)
+import AuInputNumber from './components/data_entry/AuInputNumber'
+Vue.component('au-input-number', AuInputNumber)
 
 new Vue({
   render: h => h(App),

@@ -4,9 +4,25 @@
 /*
  * COLORS
  */
-/*
- * OVERRIDE AURORA ICON COLOR VARIABLES
- */
+:root {
+  --color-white: #FFFFFF;
+  --color-title: #191919;
+  --color-paragraph: #515151;
+  --color-placeholder: #888888;
+  --color-border: rgb(228, 228, 228);
+  --color-disabled: #D3D9E1;
+  --color-background: #f5f8fe;
+  --color-caribbean-green: #07D79C;
+  --color-caribbean-green-hover: #02C38D;
+  --color-hight-contrast: #20324A;
+  --color-dodger-blue: #2C7DFA;
+  --color-egyptian-blue: #0F36A5;
+  --color-midnight-blue: #141F72;
+  --color-portage: #8B91DD;
+  --color-radical-red: #F6576E;
+  --color-atomic-tangerine: #FF9041;
+}
+
 /*
  * Font Mixin
  */
@@ -14,7 +30,7 @@
  * Font-family
  */
 /*
- * Font-color
+ * Font-size
  */
 /*
  * Font-weight
@@ -82,11 +98,11 @@
  * Font styles
  */
 h1, h2, h3, h4, h5, h6 {
-  color: #191919;
+  color: var(--color-title);
 }
 
 label, span, p {
-  color: #515151;
+  color: var(--color-paragraph);
 }
 
 body {
@@ -250,21 +266,21 @@ body {
 .au-text h1, .au-text h2, .au-text h3 {
   font-family: Eina, Helvetica;
   font-weight: 700;
-  color: #191919;
+  color: var(--color-title);
   margin: 0;
 }
 
 .au-text h4, .au-text h5, .au-text h6 {
   font-family: Inter, Helvetica;
   font-weight: 800;
-  color: #191919;
+  color: var(--color-title);
   margin: 0;
 }
 
 .au-text p, .au-text label, .au-text span {
   font-family: Inter, Helvetica;
   font-weight: 400;
-  color: #515151;
+  color: var(--color-paragraph);
   margin: 0;
 }
 
@@ -312,14 +328,15 @@ body {
 }
 
 .au-button[au-color="primary"] .au-button-element {
-  background-color: #07D79C;
-  padding: 10px 25px;
+  background-color: var(--color-caribbean-green);
+  padding: 5px 25px;
+  line-height: 1.6;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease;
-  color: #FFFFFF;
+  color: var(--color-white);
   font-family: Inter, Helvetica;
   font-size: 0.8rem;
   font-weight: 600;
@@ -327,8 +344,8 @@ body {
 }
 
 .au-button[au-color="primary"] .au-button-element:hover, .au-button[au-color="primary"] .au-button-element:active {
-  color: #FFFFFF;
-  background-color: #02C38D;
+  color: var(--color-white);
+  background-color: var(--color-caribbean-green-hover);
 }
 
 .au-button[au-color="primary"] .au-button-element:focus {
@@ -336,21 +353,22 @@ body {
 }
 
 .au-button[au-color="primary"] .au-button-element:disabled {
-  color: #FFFFFF;
-  background-color: #D3D9E1;
+  color: var(--color-white);
+  background-color: var(--color-disabled);
   box-shadow: none;
   pointer-events: none;
 }
 
 .au-button[au-color="hight"] .au-button-element {
-  background-color: #FFFFFF;
-  padding: 10px 25px;
+  background-color: var(--color-white);
+  padding: 5px 25px;
+  line-height: 1.6;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease;
-  color: #20324A;
+  color: var(--color-hight-contrast);
   font-family: Inter, Helvetica;
   font-size: 0.8rem;
   font-weight: 600;
@@ -358,8 +376,8 @@ body {
 }
 
 .au-button[au-color="hight"] .au-button-element:hover, .au-button[au-color="hight"] .au-button-element:active {
-  color: #FFFFFF;
-  background-color: #20324A;
+  color: var(--color-white);
+  background-color: var(--color-hight-contrast);
 }
 
 .au-button[au-color="hight"] .au-button-element:focus {
@@ -367,8 +385,8 @@ body {
 }
 
 .au-button[au-color="hight"] .au-button-element:disabled {
-  color: #FFFFFF;
-  background-color: #D3D9E1;
+  color: var(--color-white);
+  background-color: var(--color-disabled);
   box-shadow: none;
   pointer-events: none;
 }
@@ -385,15 +403,15 @@ body {
  * CARD
  */
 .au-card {
-  background-color: #FFFFFF;
-  border: solid 0.4px #e4e4e4;
+  background-color: var(--color-white);
+  border: solid 0.4px var(--color-border);
   border-radius: 4px;
-  box-shadow: #e4e4e4 0px 3px 16px -5px;
+  box-shadow: var(--color-border) 0px 3px 16px -5px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .au-card > .header {
-  border-bottom: solid 0.4px #e4e4e4;
+  border-bottom: solid 0.4px var(--color-border);
   display: flex;
   flex-wrap: nowrap;
   align-items: stretch;
@@ -436,7 +454,7 @@ body {
 .au-card[au-hoverable]:hover {
   position: relative;
   transform: scale(1.02);
-  box-shadow: #e4e4e4 0px 3px 10px 2px;
+  box-shadow: var(--color-border) 0px 3px 10px 2px;
 }
 
 .au-card[au-collapsable] .icon-section {
@@ -481,8 +499,8 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  fill: #20324A;
-  stroke: #20324A;
+  fill: var(--color-hight-contrast);
+  stroke: var(--color-hight-contrast);
 }
 
 .au-navigator .au-navigator-link .label-wrapper .icon.chevron {
@@ -495,21 +513,21 @@ body {
 }
 
 .au-navigator .au-navigator-link .label-wrapper:hover .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .label-wrapper:hover .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link.active > .label-wrapper .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link.active > .label-wrapper .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link[expanded] .label-wrapper .icon.chevron {
@@ -546,8 +564,8 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  fill: #20324A;
-  stroke: #20324A;
+  fill: var(--color-hight-contrast);
+  stroke: var(--color-hight-contrast);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
@@ -560,21 +578,21 @@ body {
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
@@ -611,8 +629,8 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  fill: #20324A;
-  stroke: #20324A;
+  fill: var(--color-hight-contrast);
+  stroke: var(--color-hight-contrast);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper .icon.chevron {
@@ -625,21 +643,21 @@ body {
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link .label-wrapper:hover .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .au-text {
-  color: #07D79C;
+  color: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link.active > .label-wrapper .icon .au-icon {
-  fill: #07D79C;
-  stroke: #07D79C;
+  fill: var(--color-caribbean-green);
+  stroke: var(--color-caribbean-green);
 }
 
 .au-navigator .au-navigator-link .sub-menu .au-navigator-link .sub-menu .au-navigator-link[expanded] .label-wrapper .icon.chevron {
@@ -664,5 +682,113 @@ body {
 .au-navigator .au-navigator-link .sub-menu[expanded] {
   opacity: 1;
   transition: opacity 0.3s 0.4s ease-in, max-height 0.4s ease-in-out;
+}
+
+.au-input {
+  outline: none;
+}
+
+.au-input input {
+  font-family: Inter, Helvetica;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  padding: 5px 8px 4px 8px;
+  border: solid 1px var(--color-border);
+  border-radius: 4px;
+  outline: none;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  transition-duration: 0.3s;
+}
+
+.au-input input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.au-input input:focus {
+  border: solid 1px var(--color-midnight-blue);
+  box-shadow: 0px 0px 9px -4px var(--color-egyptian-blue);
+}
+
+.au-input input[justify=center] {
+  text-align: center;
+}
+
+.au-input input[justify=start] {
+  text-align: start;
+}
+
+.au-input input[justify=end] {
+  text-align: end;
+}
+
+.au-input-number {
+  position: relative;
+}
+
+.au-input-number input {
+  padding: 5px 28px 4px 28px;
+}
+
+.au-input-number input::-webkit-inner-spin-button, .au-input-number input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.au-input-number .spin {
+  font-family: Inter, Helvetica;
+  position: absolute;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  border-color: var(--color-border);
+  transition-duration: 0.3s;
+}
+
+.au-input-number .spin[focus] {
+  border-color: var(--color-midnight-blue);
+}
+
+.au-input-number .spin:hover, .au-input-number .spin:active {
+  color: var(--color-white);
+  border-color: var(--color-midnight-blue);
+  background-color: var(--color-midnight-blue);
+}
+
+.au-input-number .spin:active {
+  transition-duration: 0.1s;
+  box-shadow: 0px 0px 9px -1px var(--color-egyptian-blue);
+}
+
+.au-input-number .spin-minus {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: solid 1px var(--color-border);
+  border-radius: 4px 0 0 4px;
+}
+
+.au-input-number .spin-plus {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-left: solid 1px var(--color-border);
+  border-radius: 0 4px 4px 0;
+}
+
+.au-input-number .extra {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, Helvetica;
+  font-size: 0.8rem;
+  padding: 5px 4px 4px 4px;
 }
 /*# sourceMappingURL=styles.css.map */

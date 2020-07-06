@@ -3,12 +3,12 @@ $limit: 3;
 
 @mixin au-navigator-link-active () {
     .au-text {
-        color: $color-caribbean-green;
+        color: var(--color-caribbean-green);
     }
 
     .icon .au-icon {
-        fill: $color-caribbean-green;
-        stroke: $color-caribbean-green;
+        fill: var(--color-caribbean-green);
+        stroke: var(--color-caribbean-green);
     }
 }
 
@@ -39,8 +39,8 @@ $limit: 3;
                         width: 100%;
                         display: flex;
                         align-items: center;
-                        fill: $color-hight-contrast;
-                        stroke: $color-hight-contrast;
+                        fill: var(--color-hight-contrast);
+                        stroke: var(--color-hight-contrast);
                     }
 
                     &.chevron {
