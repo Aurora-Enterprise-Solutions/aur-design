@@ -7,21 +7,21 @@
     h1, h2, h3 {
         font-family: $font-family-header;
         font-weight: $font-weight-bold;
-        color: $color-title;
+        color: var(--color-title);
         margin: 0;
     }
 
     h4, h5, h6 {
         font-family: $font-family-regular;
         font-weight: $font-weight-extrabold;
-        color: $color-title;
+        color: var(--color-title);
         margin: 0;
     }
 
     p, label, span {
         font-family: $font-family-regular;
         font-weight: $font-weight-regular;
-        color: $color-paragraph;
+        color: var(--color-paragraph);
         margin: 0;
     }
 
