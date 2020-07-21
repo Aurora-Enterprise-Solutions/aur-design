@@ -26,6 +26,10 @@ import AuInput from './components/data_entry/AuInput'
 Vue.component('au-input', AuInput)
 import AuInputNumber from './components/data_entry/AuInputNumber'
 Vue.component('au-input-number', AuInputNumber)
+import AuForm from './components/data_entry/AuForm'
+Vue.component('au-form', AuForm)
+import AuFormItem from './components/data_entry/AuFormItem'
+Vue.component('au-form-item', AuFormItem)
 
 new Vue({
   render: h => h(App),

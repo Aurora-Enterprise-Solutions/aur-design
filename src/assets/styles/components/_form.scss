@@ -1,0 +1,75 @@
+.au-form {
+    .title-wrapper {
+        .title {
+            margin: 0 0 5px 0;
+        }
+
+        .divider {
+            background-color: var(--color-disabled);
+            height: 1px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.au-form-item {
+    margin-bottom: 15px;
+
+    .label,
+    .help,
+    .message {
+        font-size: $font-size-regular;
+        padding: 0 2px;
+    }
+
+    .label-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+    }
+
+    .required-pin {
+        height: 5px;
+        width: 5px;
+        background-color: var(--color-simply-red);
+        border-radius: 50%;
+        margin-right: 3px;
+    }
+
+    .label {
+        font-weight: $font-weight-semibold;
+    }
+
+    .help {
+        margin: 6px 0 4px 0;
+    }
+
+    .message {
+        position: relative;
+        color: var(--color-radical-red);
+        margin: 2px 0 4px 0;
+        animation: message-in 0.3s;
+    }
+}
+
+@keyframes message-in {
+    0% {
+        transform: translateX(-5px);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

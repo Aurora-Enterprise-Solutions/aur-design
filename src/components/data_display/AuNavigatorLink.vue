@@ -13,6 +13,7 @@
         </div>
 
         <div ref="submenu" class="sub-menu" :expanded="expanded" style="display: none">
+            <!-- @slot Usa este slot para ingresar un sub-link. -->
             <slot></slot>
         </div>
     </div>
@@ -22,28 +23,44 @@
 export default {
     name: 'AuNavigatorLink',
     props: {
+        /**
+         * Identificador del link. Debe ser único en todos los niveles.
+         */
         id: {
             required: true,
             type: String
         },
 
+        /**
+         * Título del link.
+         */
         label: {
             required: true,
             type: String
         },
 
+        /**
+         * Path a donde redirigirá este link.
+         */
         to: {
             required: false,
             type: String,
             default: undefined
         },
 
+        /**
+         * Nombre del icono a utilizar según la librería aur-icon.
+         * @see https://github.com/Aurora-Enterprise-Solutions/aur-icon
+         */
         icon: {
             required: false,
             type: String,
             default: undefined
         },
 
+        /**
+         * Array de links para el submenu.
+         */
         menu: {
             required: false,
             type: Array,
@@ -69,6 +86,10 @@ export default {
             if (event.propertyName === 'max-height') {
                 this.setChildrenDisplayValue(this.$children, 'block')
 
+                /**
+                 * Evento que se emite cuando se expande un submenu.
+                 * @property {{ height: Number }} event objeto que indica el tamaño del submenu
+                 */
                 this.$emit('expand', {
                     event: true,
                     height: Number(this.$refs.submenu.style.maxHeight.slice(0, -2))
@@ -107,6 +128,16 @@ export default {
                 this.changeMaxHeightToContent()
             }
 
+            /**
+             * Evento go que se gatilla cada vez que se da click sobre un link.
+             * @property {{
+                    id: String,
+                    label: String,
+                    to: String,
+                    icon: String,
+                    menu: Array
+                }} event objeto con la estructura definida del link
+             */
             this.$emit('go', {
                 id: this.id,
                 label: this.label,

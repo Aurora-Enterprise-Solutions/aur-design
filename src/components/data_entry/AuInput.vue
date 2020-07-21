@@ -1,6 +1,6 @@
 <template>
     <div class="au-input au-input-text">
-        <input :type="_type" :placeholder="placeholder">
+        <input :value="value" :type="_type" :placeholder="placeholder" @change="onChange" @input="onInput">
     </div>
 </template>
 
@@ -21,12 +21,27 @@ export default {
             required: false,
             type: String,
             default: ''
+        },
+
+        value: {
+            required: false,
+            type: String,
+            default: undefined
         }
     },
     computed: {
         _type () {
             return ['text', 'search', 'url', 'email'].includes(this.type) ? this.type : 'text'
         }
-    }
+    },
+    methods: {
+        onChange (event) {
+            this.$emit('change', event.target.value)
+        },
+
+        onInput (event) {
+            this.$emit('input', event.target.value)
+        }
+    },
 }
 </script>

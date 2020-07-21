@@ -112,7 +112,10 @@ export default {
     },
     methods: {
         setGutter() {
-            let cols = this.$el.querySelectorAll('.au-row > .au-col')
+            let colsItems = this.$children.filter((c) => c.$options.name === 'AuCol')
+            let cols = colsItems.map((c) => {
+                return c.$el
+            })
 
             // Es [horizontal, vertical]
             if (Array.isArray(this.gutter)) {
