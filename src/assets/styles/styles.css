@@ -811,6 +811,18 @@ body {
   margin-bottom: 15px;
 }
 
+.au-form .required {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.au-form .required label {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-radical-red);
+}
+
 .au-form-item {
   margin-bottom: 15px;
 }
@@ -828,14 +840,6 @@ body {
   margin-bottom: 3px;
 }
 
-.au-form-item .required-pin {
-  height: 5px;
-  width: 5px;
-  background-color: var(--color-simply-red);
-  border-radius: 50%;
-  margin-right: 3px;
-}
-
 .au-form-item .label {
   font-weight: 600;
 }
@@ -849,6 +853,14 @@ body {
   color: var(--color-radical-red);
   margin: 2px 0 4px 0;
   animation: message-in 0.3s;
+}
+
+.required-pin {
+  height: 5px;
+  width: 5px;
+  background-color: var(--color-simply-red);
+  border-radius: 50%;
+  margin-right: 3px;
 }
 
 @keyframes message-in {

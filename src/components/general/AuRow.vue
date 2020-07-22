@@ -131,11 +131,16 @@ export default {
 
                 if (cols.length > 0) {
                     if (H_GUTTER > 0 && V_GUTTER > 0) {
-                        this.$el.style.margin = '-' + (V_GUTTER / 2) + 'px -' + (H_GUTTER / 2) + 'px'
+                        this.$el.style.marginTop = '-' + (V_GUTTER / 2) + 'px'
+                        this.$el.style.marginBottom = '-' + (V_GUTTER / 2) + 'px'
+                        this.$el.style.marginLeft = '-' + (H_GUTTER / 2) + 'px'
+                        this.$el.style.marginRight = '-' + (H_GUTTER / 2) + 'px'
                     } else if (H_GUTTER <= 0) {
-                        this.$el.style.margin = '-' + (V_GUTTER / 2) + 'px 0'
+                        this.$el.style.marginTop = '-' + (V_GUTTER / 2) + 'px'
+                        this.$el.style.marginBottom = '-' + (V_GUTTER / 2) + 'px'
                     } else if (V_GUTTER <= 0) {
-                        this.$el.style.margin = '0 px -' + (H_GUTTER / 2) + 'px'
+                        this.$el.style.marginLeft = '-' + (H_GUTTER / 2) + 'px'
+                        this.$el.style.marginRight = '-' + (H_GUTTER / 2) + 'px'
                     }
                 }
             }
@@ -147,8 +152,10 @@ export default {
                     c.style.paddingRight = (this.gutter / 2) + 'px'
                 })
 
-                if (cols.length > 0)
-                    this.$el.style.margin = '0 px -' + (this.gutter / 2) + 'px'
+                if (cols.length > 0) {
+                    this.$el.style.marginLeft = '-' + (this.gutter / 2) + 'px'
+                    this.$el.style.marginRight = '-' + (this.gutter / 2) + 'px'
+                }
             }
         },
 

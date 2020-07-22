@@ -9,6 +9,11 @@
 
         <!-- @slot Sección para ingresar los items del form. -->
         <slot></slot>
+
+        <div class="required">
+            <div class="required-pin"></div>
+            <label>{{ $t('required') }}</label>
+        </div>
     </form>
 </template>
 

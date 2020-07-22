@@ -10,6 +10,18 @@
             margin-bottom: 15px;
         }
     }
+
+    .required {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+
+        label {
+            font-size: $font-size-regular;
+            font-style: italic;
+            color: var(--color-radical-red);
+        }
+    }
 }
 
 .au-form-item {
@@ -28,14 +40,6 @@
         margin-bottom: 3px;
     }
 
-    .required-pin {
-        height: 5px;
-        width: 5px;
-        background-color: var(--color-simply-red);
-        border-radius: 50%;
-        margin-right: 3px;
-    }
-
     .label {
         font-weight: $font-weight-semibold;
     }
@@ -50,6 +54,14 @@
         margin: 2px 0 4px 0;
         animation: message-in 0.3s;
     }
+}
+
+.required-pin {
+    height: 5px;
+    width: 5px;
+    background-color: var(--color-simply-red);
+    border-radius: 50%;
+    margin-right: 3px;
 }
 
 @keyframes message-in {
