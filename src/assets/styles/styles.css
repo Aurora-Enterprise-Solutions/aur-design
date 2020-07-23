@@ -328,6 +328,12 @@ body {
   display: inline-block;
 }
 
+.au-button .au-button-element {
+  font-family: Inter, Helvetica;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .au-button[au-color="primary"] .au-button-element {
   background-color: var(--color-caribbean-green);
   padding: 5px 25px;
@@ -338,10 +344,6 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease;
   color: var(--color-white);
-  font-family: Inter, Helvetica;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .au-button[au-color="primary"] .au-button-element:hover, .au-button[au-color="primary"] .au-button-element:active {
@@ -370,10 +372,6 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease;
   color: var(--color-hight-contrast);
-  font-family: Inter, Helvetica;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .au-button[au-color="hight"] .au-button-element:hover, .au-button[au-color="hight"] .au-button-element:active {
@@ -445,11 +443,12 @@ body {
   overflow: auto;
   position: relative;
   opacity: 1;
-  transition: max-height 0.4s ease-in-out, opacity 0.3s 0.4s ease-in;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s 0.4s ease-in;
 }
 
-.au-card > .body > * {
+.au-card > .body .body-content-wrapper {
   padding: 8px 15px;
+  box-sizing: border-box;
 }
 
 .au-card[au-hoverable]:hover {

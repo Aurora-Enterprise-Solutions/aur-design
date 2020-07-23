@@ -47,11 +47,12 @@
         overflow: auto;
         position: relative;
         opacity: 1;
-        transition: max-height 0.4s ease-in-out,
+        transition: max-height 0.3s ease-in-out,
                     opacity 0.3s 0.4s ease-in;
 
-        & > * {
+        .body-content-wrapper {
             padding: 8px 15px;
+            box-sizing: border-box;
         }
     }
 

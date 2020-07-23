@@ -14,13 +14,7 @@
         cursor: pointer;
         transition: color 0.3s ease,
                     background-color 0.3s ease;
-
-        // Font
         color: $color;
-        font-family: Inter, Helvetica;
-        font-size: $font-size-regular;
-        font-weight: $font-weight-semibold;
-        text-transform: uppercase;
 
         &:hover,
         &:active {
@@ -43,6 +37,13 @@
 
 .au-button {
     display: inline-block;
+
+    .au-button-element {
+        font-family: Inter, Helvetica;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-semibold;
+        // text-transform: uppercase;
+    }
 
     // Color prop
     &[au-color="primary"] {
