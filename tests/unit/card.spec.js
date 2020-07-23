@@ -17,12 +17,20 @@ describe('Componente AuCard', () => {
   }
 
   test('el componente tiene nombre', () => {
-    const wrapper = shallowMount(AuCard);
+    const wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.name()).toBe('AuCard');
   })
 
   test('la prop title debe ser por defecto ' + defaultData.title, () => {
-    let wrapper = shallowMount(AuCard);
+    let wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.vm.title).toBeDefined();
     expect(wrapper.vm.title).toBe(defaultData.title);
   })
@@ -31,6 +39,9 @@ describe('Componente AuCard', () => {
     let wrapper = shallowMount(AuCard, {
       propsData: {
         title: 'Título del card'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
     let titleWrapper = wrapper.find('.title-section');
@@ -38,7 +49,11 @@ describe('Componente AuCard', () => {
   })
 
   test('la prop description debe ser por defecto ' + defaultData.description, () => {
-    let wrapper = shallowMount(AuCard);
+    let wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.vm.description).toBeDefined();
     expect(wrapper.vm.description).toBe(defaultData.description);
   })
@@ -47,6 +62,9 @@ describe('Componente AuCard', () => {
     let wrapper = shallowMount(AuCard, {
       propsData: {
         title: 'Descripción del card'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
     let titleWrapper = wrapper.find('.title-section');
@@ -54,13 +72,21 @@ describe('Componente AuCard', () => {
   })
 
   test('la prop defaultCollapsed debe ser por defecto ' + defaultData.defaultCollapsed, () => {
-    let wrapper = shallowMount(AuCard);
+    let wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.vm.defaultCollapsed).toBeDefined();
     expect(wrapper.vm.defaultCollapsed).toBe(defaultData.defaultCollapsed);
   })
 
   test('la prop collapsable debe ser por defecto ' + defaultData.collapsable, () => {
-    let wrapper = shallowMount(AuCard);
+    let wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.vm.collapsable).toBeDefined();
     expect(wrapper.vm.collapsable).toBe(defaultData.collapsable);
   })
@@ -69,13 +95,20 @@ describe('Componente AuCard', () => {
     let wrapper = shallowMount(AuCard, {
       propsData: {
         collapsable: true
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
     expect(wrapper.find('.au-card').attributes()).toHaveProperty('au-collapsable');
   })
 
   test('la prop hoverable debe ser por defecto ' + defaultData.hoverable, () => {
-    let wrapper = shallowMount(AuCard);
+    let wrapper = shallowMount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.vm.hoverable).toBeDefined();
     expect(wrapper.vm.hoverable).toBe(defaultData.hoverable);
   })
@@ -84,6 +117,9 @@ describe('Componente AuCard', () => {
     let wrapper = shallowMount(AuCard, {
       propsData: {
         hoverable: true
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
     expect(wrapper.find('.au-card').attributes()).toHaveProperty('au-hoverable');
@@ -96,7 +132,8 @@ describe('Componente AuCard', () => {
         collapsable: true
       },
       methods: {
-        onCollapse
+        onCollapse,
+        setResizeObserver: jest.fn()
       }
     });
 
@@ -109,6 +146,9 @@ describe('Componente AuCard', () => {
     let wrapper = mount(AuCard, {
       propsData: {
         collapsable: true
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
 
@@ -119,7 +159,11 @@ describe('Componente AuCard', () => {
     expect(wrapper.emitted().collapse).toBeTruthy();
 
     // collapsable es false o undefined
-    wrapper = mount(AuCard);
+    wrapper = mount(AuCard, {
+      methods: {
+        setResizeObserver: jest.fn()
+      }
+    });
     expect(wrapper.contains('.icon-section')).toBe(false);
   })
 
@@ -127,6 +171,9 @@ describe('Componente AuCard', () => {
     const wrapper = shallowMount(AuCard, {
       slots: {
         default: 'Label'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
 
@@ -137,6 +184,9 @@ describe('Componente AuCard', () => {
     const wrapper = shallowMount(AuCard, {
       slots: {
         extra: '<a>Más info.</a>'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
 
@@ -147,6 +197,9 @@ describe('Componente AuCard', () => {
     const wrapper = shallowMount(AuCard, {
       slots: {
         title: 'TITLE SLOT'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
 
@@ -161,6 +214,9 @@ describe('Componente AuCard', () => {
       },
       scopedSlots: {
         title: '<div slot-scope="headerProps"><h1>{{headerProps.header.title}}</h1><label>{{headerProps.header.description}}</label></div>'
+      },
+      methods: {
+        setResizeObserver: jest.fn()
       }
     });
 

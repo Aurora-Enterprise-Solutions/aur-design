@@ -22,7 +22,7 @@
 import AutoNumeric from 'autonumeric'
 
 export default {
-    name: 'AuInput',
+    name: 'AuInputNumber',
     props: {
         value: {
             required: false,
@@ -227,7 +227,13 @@ export default {
                 decimalPlaces: this.decimals ? this.decimals.toString() : '0'
             }
 
-            if (this.autoNumeric && this.config) {
+            // Elimina los indefinidos
+            Object.keys(defaultOptions).forEach((key) => {
+                if (!defaultOptions[key])
+                    delete defaultOptions[key]
+            })
+
+            if (this.autoNumeric && this.config != null) {
                 this.autoNumeric.update(defaultOptions, this.config)
             } else if (this.autoNumeric) {
                 this.autoNumeric.update(defaultOptions)
