@@ -18,7 +18,7 @@
                     </au-col>
 
                     <au-col :span="8">
-                        <au-input-number justify="end" placeholder="Ingrese un número" :step="0.42" :max="10" :min="-3" :decimals="2" />
+                        <au-input-number justify="end" placeholder="Ingrese un número" :step="0.42" :decimals="2" prefix="$" suffix="CLP" :config="{ decimalCharacter: ',', digitGroupSeparator: '.' }" />
                     </au-col>
                 </au-row>
             </div>

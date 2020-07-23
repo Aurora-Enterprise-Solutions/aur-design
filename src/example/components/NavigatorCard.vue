@@ -1,6 +1,6 @@
 <template>
     <div>
-        <au-card title="Navigator" description="Widget que permite desplegar una lista de links." :collapsable="true" :default-collapsed="true">
+        <au-card title="Navigator" description="Widget que permite desplegar una lista de links." :collapsable="true" :default-collapsed="true" :height="250">
             <div slot="title" slot-scope="headerProps" class="app-card-title">
                 <div>
                 <au-text tag="h5" class="title-scope">{{ headerProps.header.title }}</au-text>
@@ -13,7 +13,7 @@
             <div>
                 <au-row :gutter="16">
                     <au-col>
-                        <au-navigator v-model="selected" link-key="id" :config="config" />
+                        <au-navigator v-model="selected" link-key="id" :config="config" style="position: absolute; top: 20px; bottom: 20px; left: 20px; width: 250px;" />
                     </au-col>
                 </au-row>
             </div>

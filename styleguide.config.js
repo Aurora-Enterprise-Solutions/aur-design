@@ -24,6 +24,10 @@ module.exports = {
                 {
 					name: 'Visualización',
 					components: 'src/components/data_display/[A-Z]*.vue'
+				},
+                {
+					name: 'Entrada',
+					components: 'src/components/data_entry/[A-Z]*.vue'
 				}
 			]
 		}

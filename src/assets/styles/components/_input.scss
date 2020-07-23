@@ -35,6 +35,17 @@
             text-align: end;
         }
     }
+
+    // Para los casos de formulario
+    &[has-error=true] {
+        input {
+            border-color: var(--color-radical-red);
+
+            &:focus {
+                box-shadow: 0px 0px 9px -4px var(--color-radical-red);
+            }
+        }
+    }
 }
 
 .au-input-number {

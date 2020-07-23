@@ -51,7 +51,23 @@ export default {
         onClickLink(event) {
             if (event.to && (!event.menu || event.menu.length == 0)) {
                 this.getChildPath(event.id)
+                /**
+                 * Evento input, sirve para el v-model.
+                 * Este se gatilla cada vez que se da click sobre un link con la propiedad 'to' definida.
+                 * @property {String} event id del link seleccionado
+                 */
                 this.$emit('input', event.id)
+
+                /**
+                 * Evento go que se gatilla cada vez que se da click sobre un link.
+                 * @property {{
+                        id: String,
+                        label: String,
+                        to: String,
+                        icon: String,
+                        menu: Array
+                    }} event objeto con la estructura definida del link
+                 */
                 this.$emit('go', event)
             }
         },

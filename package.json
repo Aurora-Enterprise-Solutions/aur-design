@@ -2,30 +2,27 @@
   "name": "@aurora-enterprise-solutions/aur-design",
   "version": "0.1.0",
   "private": false,
-  "license": "MIT",
-  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "jest --verbose",
-    "test:watch": "jest --watch --verbose",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link",
+    "push": "np --skip-2fa --no-publish",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
     "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
-    "push": "np --skip-2fa --no-publish",
-    "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link"
+    "test": "jest --verbose --colors",
+    "test:watch": "jest --watch --verbose"
   },
   "dependencies": {
     "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "autonumeric": "^4.6.0",
     "core-js": "^3.6.4",
-    "lodash": "^4.17.15",
-    "vue": "^2.6.11"
+    "lodash": "^4.17.19",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.17.3"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^1.0.0",
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-unit-jest": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
@@ -35,6 +32,7 @@
     "node-sass": "^4.13.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "vue-cli-plugin-i18n": "~1.0.1",
     "vue-loader": "^15.9.1",
     "vue-style-loader": "^4.1.2",
     "vue-styleguidist": "^4.18.0",
@@ -57,5 +55,11 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(@aurora-enterprise-solutions)/)"
     ]
+  },
+  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
   }
 }
