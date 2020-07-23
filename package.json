@@ -10,7 +10,7 @@
     "push": "np --skip-2fa --no-publish",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
     "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
-    "test": "jest --verbose",
+    "test": "jest --verbose --colors",
     "test:watch": "jest --watch --verbose"
   },
   "dependencies": {

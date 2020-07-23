@@ -107,10 +107,7 @@ export default {
             this.changeMaxHeightToContent()
         })
 
-        this.observerInstance = new ResizeObserver((entries, observer) => {
-            this.changeMaxHeightToContent()
-        })
-
+        this.setResizeObserver()
         this.onChildUpdate()
     },
     updated() {
@@ -132,15 +129,23 @@ export default {
             }
         },
 
-        onChildUpdate () {
-            this.observerInstance.disconnect()
-            let children = this.$refs.body.querySelectorAll(':scope > *')
-
-            children.forEach((c) => {
-                this.observerInstance.observe(c, {
-                    box: 'border-box'
-                })
+        setResizeObserver () {
+            this.observerInstance = new ResizeObserver((entries, observer) => {
+                this.changeMaxHeightToContent()
             })
+        },
+
+        onChildUpdate () {
+            if (this.observerInstance) {
+                this.observerInstance.disconnect()
+                let children = this.$refs.body.querySelectorAll(':scope > *')
+
+                children.forEach((c) => {
+                    this.observerInstance.observe(c, {
+                        box: 'border-box'
+                    })
+                })
+            }
         },
 
         changeMaxHeightToContent() {
