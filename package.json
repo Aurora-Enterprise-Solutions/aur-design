@@ -17,7 +17,7 @@
     "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "autonumeric": "^4.6.0",
     "core-js": "^3.6.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.11",
     "vue-i18n": "^8.17.3"
   },
