@@ -18,7 +18,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [x] Navigator
 - [x] Input
 - [x] InputNumber
-= [x] Form
+- [x] Form
 - [ ] DatePicker
 - [ ] TimePicker
 - [ ] Radio
