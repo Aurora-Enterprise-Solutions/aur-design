@@ -36,6 +36,7 @@ let AuInput = require('./src/components/data_entry/AuInput.vue')
 let AuInputNumber = require('./src/components/data_entry/AuInputNumber.vue')
 let AuForm = require('./src/components/data_entry/AuForm.vue')
 let AuFormItem = require('./src/components/data_entry/AuFormItem.vue')
+let AuDatePicker = require('./src/components/data_entry/AuDatePicker.vue')
 
 const components = [
     AuRow,
@@ -48,7 +49,8 @@ const components = [
     AuInput,
     AuInputNumber,
     AuForm,
-    AuFormItem
+    AuFormItem,
+    AuDatePicker
 ]
 
 const install = function install(Vue, options) {

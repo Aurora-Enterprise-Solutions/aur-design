@@ -9,7 +9,7 @@ export default {
     name: 'AuInput',
     props: {
         /**
-         * @values text, search, url, email
+         * @values text, search, url, email, date, time, datetime-local, month
          */
         type: {
             required: false,
@@ -31,7 +31,7 @@ export default {
     },
     computed: {
         _type () {
-            return ['text', 'search', 'url', 'email'].includes(this.type) ? this.type : 'text'
+            return ['text', 'search', 'url', 'email', 'date', 'time', 'datetime-local', 'month'].includes(this.type) ? this.type : 'text'
         }
     },
     methods: {
