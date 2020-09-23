@@ -4,7 +4,7 @@
     input {
         font-family: $font-family-regular;
         font-size: $font-size-regular;
-        line-height: 1.6;
+        line-height: 1.5rem;
         padding: 5px 8px 4px 8px;
         border: solid 1px var(--color-border);
         border-radius: 4px;
@@ -13,6 +13,10 @@
         width: 100%;
         box-sizing: border-box;
         transition-duration: 0.3s;
+
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
 
         &::placeholder {
             color: var(--color-placeholder)
@@ -50,6 +54,7 @@
 
 .au-input-number {
     position: relative;
+    min-width: 100px;
 
     input {
         padding: 5px 28px 4px 28px;

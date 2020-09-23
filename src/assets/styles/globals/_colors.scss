@@ -12,6 +12,9 @@
     --color-caribbean-green: #07D79C;
     --color-caribbean-green-hover: #02C38D;
     --color-hight-contrast: #20324A;
+    --color-hight-contrast-hover: #141F72;
+
+    // Otros
     --color-dodger-blue: #2C7DFA;
     --color-egyptian-blue: #0F36A5;
     --color-midnight-blue: #141F72;
@@ -20,3 +23,15 @@
     --color-simply-red: #ff798d;
     --color-atomic-tangerine: #FF9041;
 }
+
+$color-white: var(--color-white);
+$color-title: var(--color-title);
+$color-paragraph: var(--color-paragraph);
+$color-placeholder: var(--color-placeholder);
+$color-border: var(--color-border);
+$color-disabled: var(--color-disabled);
+$color-background: var(--color-background);
+$color-caribbean-green: var(--color-caribbean-green);
+$color-caribbean-green-hover: var(--color-caribbean-green-hover);
+$color-hight-contrast: var(--color-hight-contrast);
+$color-hight-contrast-hover: var(--color-hight-contrast-hover);

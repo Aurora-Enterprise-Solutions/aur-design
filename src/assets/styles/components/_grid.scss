@@ -7,7 +7,7 @@
         &-#{$i} {
             display: block;
             box-sizing: border-box;
-            width: (($i * 100) / 24)#{'%'};
+            width: (($i * 100) / 24) * 1%;
         }
     }
 }

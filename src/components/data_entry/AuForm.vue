@@ -10,7 +10,7 @@
         <!-- @slot Sección para ingresar los items del form. -->
         <slot></slot>
 
-        <div class="required">
+        <div v-if="colon" class="required">
             <div class="required-pin"></div>
             <label>{{ $t('required') }}</label>
         </div>
@@ -67,6 +67,15 @@ export default {
             required: false,
             type: Object,
             default: undefined
+        },
+
+        /**
+         * Muestra o no el indicador de requerido.
+         */
+        colon: {
+            required: false,
+            type: Boolean,
+            default: true
         }
     },
     data () {
@@ -268,6 +277,7 @@ export default {
         setRequired () {
             this.itemsProp.forEach((i) => {
                 this.items[i]['requiredFormItem'] = this.hasRequiredRule(i)
+                this.items[i]['fatherColon'] = this.colon
             })
         },
 
