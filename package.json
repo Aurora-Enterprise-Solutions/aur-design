@@ -1,6 +1,6 @@
 {
   "name": "@aurora-enterprise-solutions/aur-design",
-  "version": "0.2.2-0",
+  "version": "0.2.3-0",
   "private": false,
   "license": "MIT",
   "main": "./dist/aur-design.common.js",
