@@ -12,7 +12,7 @@
 
 <script>
 import _ from 'lodash'
-import AuNavigatorLink from '@/components/data_display/AuNavigatorLink'
+import AuNavigatorLink from './AuNavigatorLink'
 
 export default {
     name: 'AuNavigator',
