@@ -14,7 +14,7 @@
             <div>
                 <au-row :gutter="16">
                     <au-col :span="8">
-                        <au-form ref="formCustom" title="Perfil del Usuario" :model="model" :rules="rules">
+                        <au-form ref="formCustom" title="Perfil del Usuario" :model="model" :rules="rules" :colon="false">
                             <au-row :gutter="16">
                                 <au-col :span="12">
                                     <au-form-item prop="name" label="Nombre">

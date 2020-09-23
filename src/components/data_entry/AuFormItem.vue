@@ -1,7 +1,7 @@
 <template>
     <div class="au-form-item" :has-error="!!message">
         <div class="label-wrapper">
-            <div v-if="requiredFormItem || required" class="required-pin"></div>
+            <div v-if="showColon && (requiredFormItem || required)" class="required-pin"></div>
             <label class="label">
                 {{ label }}
             </label>
@@ -59,13 +59,28 @@ export default {
             required: false,
             type: Boolean,
             default: false
+        },
+
+        /**
+         * Muestra o no el indicador de requerido.
+         */
+        colon: {
+            required: false,
+            type: Boolean,
+            default: false
         }
     },
     data () {
         return {
             message: '',
             inputField: undefined,
-            requiredFormItem: false
+            requiredFormItem: false,
+            fatherColon: true
+        }
+    },
+    computed: {
+        showColon() {
+            return this.colon || this.fatherColon
         }
     },
     mounted () {

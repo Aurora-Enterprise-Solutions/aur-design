@@ -2,12 +2,30 @@
   "name": "@aurora-enterprise-solutions/aur-design",
   "version": "0.1.0",
   "private": false,
+  "license": "MIT",
+  "main": "./dist/aur-design.common.js",
+  "files": [
+    "dist/*",
+    "src/assets/**/*",
+    "src/components/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
+    "sass": "sass --watch src/assets/styles:src/assets/styles --style=compressed",
     "build": "vue-cli-service build",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link",
-    "push": "np --skip-2fa --no-publish",
+    "push": "vue-cli-service build --target lib --name aur-design ./index.js && np --skip-2fa --no-publish",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
     "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
     "test": "jest --verbose --colors",

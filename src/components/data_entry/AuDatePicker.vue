@@ -1,16 +1,32 @@
 <template>
     <div class="au-date-picker">
         <au-input type="date" :mobile="mobile"></au-input>
-        <div v-if="!isMobile" class="calendar">Calendar</div>
+        <div v-if="!isMobile" class="calendar">
+            <div class="date-picker-card">
+                <au-row class="date-picker-current">
+                    <au-col class="date-picker-arrow-left" :span="0">
+                        <
+                    </au-col>
+
+                    <au-col class="date-picker-date" :span="24">
+                        <au-row justify="center">Hoy</au-row>
+                    </au-col>
+
+                    <au-col class="date-picker-arrow-right" :span="0">
+                        <au-icon icon="chevron_up" :clickable="true"></au-icon>
+                    </au-col>
+                </au-row>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-import { mask } from 'vue-the-mask'
+// import { mask } from 'vue-the-mask'
 
 export default {
     name: 'AuDatePicker',
-    directives: { mask },
+    // directives: { mask },
     props: {
         mobile: {
             required: false,
