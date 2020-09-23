@@ -15,6 +15,9 @@
     <!--INPUT-->
     <input-card />
 
+    <!--DATE-->
+    <date-card />
+
     <!--FORM-->
     <form-card />
   </div>
@@ -27,10 +30,19 @@
   import NavigatorCard from './components/NavigatorCard'
   import InputCard from './components/InputCard'
   import FormCard from './components/FormCard'
+  import DateCard from './components/DateCard'
 
   export default {
     name: 'App',
-    components: { TextCard, ButtonCard, CardCard, NavigatorCard, InputCard, FormCard }
+    components: { 
+      TextCard,
+      ButtonCard, 
+      CardCard, 
+      NavigatorCard, 
+      InputCard, 
+      FormCard, 
+      DateCard
+    }
   }
 </script>
 

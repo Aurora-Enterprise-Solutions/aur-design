@@ -1,6 +1,6 @@
 <template>
-    <div class="au-button" :au-color="_color" :au-block="block">
-        <button class="au-button-element" :type="_htmlType" :disabled="disabled" @click="onClick($event)">
+    <div class="au-button" :au-color="_color" :au-block="block" :au-circle="circle">
+        <button ref="button" class="au-button-element" :type="_htmlType" :disabled="disabled" @click="onClick($event)">
             <!-- @slot Usa este slot para introducir el texto del botón -->
             <slot></slot>
         </button>
@@ -57,6 +57,15 @@
                 type: Boolean,
                 required: false,
                 default: false
+            },
+
+            /**
+             * Redondea los bordes.
+             */
+            circle: {
+                type: Boolean,
+                required: false,
+                default: false
             }
         },
         data() {
@@ -77,6 +86,17 @@
         methods: {
             onClick(event) {
                 if (!this.disabled) {
+                    // Animación
+                    let ripples = document.createElement('span');
+                    ripples.style.left = event.offsetX + 'px';
+                    ripples.style.top = event.offsetY + 'px';
+                    
+                    this.$refs.button.appendChild(ripples);
+
+                    setTimeout(() => {
+                        ripples.remove();
+                    }, 600);
+
                     /**
                      * Evento click.
                      * @property {MouseEvent} event evento que emite el elemento button de html

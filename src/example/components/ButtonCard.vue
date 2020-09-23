@@ -12,15 +12,24 @@
             </div>
             <div>
                 <au-row :gutter="[16, 8]" wrap="wrap">
-                <au-col>
-                    <au-button color="primary" :disabled="false" @click="buttonClick">Primary</au-button>
-                </au-col>
-                <au-col>
-                    <au-button color="hight" :disabled="false" @click="buttonClick">Hight Contrast</au-button>
-                </au-col>
-                <au-col :span="0">
-                    <au-button :disabled="true" @click="buttonClick">Disabled</au-button>
-                </au-col>
+                    <au-col>
+                        <au-button color="primary" :disabled="false" @click="buttonClick">Primary</au-button>
+                    </au-col>
+                    <au-col>
+                        <au-button color="hight" :disabled="false" @click="buttonClick">Hight Contrast</au-button>
+                    </au-col>
+                    <au-col :span="0">
+                        <au-button :disabled="true" @click="buttonClick">Disabled</au-button>
+                    </au-col>
+                </au-row>
+
+                <au-row :gutter="[16, 8]" wrap="wrap">
+                    <au-col>
+                        <au-button color="primary" circle @click="buttonClick">Primary</au-button>
+                    </au-col>
+                    <au-col>
+                        <au-button color="hight" circle @click="buttonClick">Hight Contrast</au-button>
+                    </au-col>
                 </au-row>
             </div>
         </au-card>
