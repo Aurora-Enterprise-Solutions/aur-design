@@ -1,5 +1,5 @@
 <template>
-    <div class="au-card" :au-collapsable="collapsable" :au-hoverable="hoverable" :au-collapsed="isCollapsed">
+    <div class="au-card" :au-collapsable="collapsable" :au-hoverable="hoverable" :au-collapsed="isCollapsed" :au-border="border">
         <div class="header">
             <div class="title-section">
                 <!-- @slot Aquí se puede modificar la distribución del título.
@@ -92,6 +92,15 @@ export default {
             type: Number,
             required: false,
             default: undefined
+        },
+
+        /**
+         * Define si la tarjeta posee o no borde.
+         */
+        border: {
+            type: Boolean,
+            required: false,
+            default: true
         }
     },
     components: { AuText },

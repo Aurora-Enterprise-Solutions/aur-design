@@ -1,6 +1,6 @@
 {
   "name": "@aurora-enterprise-solutions/aur-design",
-  "version": "0.1.0",
+  "version": "0.2.5-0",
   "private": false,
   "license": "MIT",
   "main": "./dist/aur-design.common.js",
@@ -32,7 +32,6 @@
     "test:watch": "jest --watch --verbose"
   },
   "dependencies": {
-    "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "autonumeric": "^4.6.0",
     "core-js": "^3.6.4",
     "lodash": "^4.17.19",
@@ -74,11 +73,5 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(@aurora-enterprise-solutions)/)"
     ]
-  },
-  "homepage": "https://github.com/Aurora-Enterprise-Solutions",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Aurora-Enterprise-Solutions/aur-design"
   }
 }
