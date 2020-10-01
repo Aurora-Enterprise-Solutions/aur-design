@@ -1,5 +1,5 @@
 <template>
-    <div class="au-button" :au-color="_color" :au-block="block" :au-circle="circle">
+    <div class="au-button" :au-color="_color" :au-block="block" :au-circle="circle" :au-transparent="transparent">
         <button ref="button" class="au-button-element" :type="_htmlType" :disabled="disabled" @click="onClick($event)">
             <!-- @slot Usa este slot para introducir el texto del botón -->
             <slot></slot>
@@ -63,6 +63,15 @@
              * Redondea los bordes.
              */
             circle: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
+
+            /**
+             * deja el fondo transparente y las letras del color seleccionado.
+             */
+            transparent: {
                 type: Boolean,
                 required: false,
                 default: false

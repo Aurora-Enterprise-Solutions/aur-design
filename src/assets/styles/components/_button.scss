@@ -16,6 +16,29 @@
                     background-color 0.3s ease;
         color: $color;
 
+        span {
+            position: absolute;
+            background: $color;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation: ripple 0.6s linear infinite;
+
+            @keyframes ripple {
+                0% {
+                    width: 0;
+                    height: 0;
+                    opacity: 0.3;
+                }
+
+                100% {
+                    width: 1000px;
+                    height: 1000px;
+                    opacity: 0;
+                }
+            }
+        }
+
         &:hover,
         &:active {
             color: $color-hover;
@@ -44,29 +67,6 @@
         font-weight: $font-weight-medium;
         position: relative;
         overflow: hidden;
-
-        span {
-            position: absolute;
-            background: #fff;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            border-radius: 50%;
-            animation: ripple 0.6s linear infinite;
-
-            @keyframes ripple {
-                0% {
-                    width: 0;
-                    height: 0;
-                    opacity: 0.3;
-                }
-
-                100% {
-                    width: 500px;
-                    height: 500px;
-                    opacity: 0;
-                }
-            }
-        }
     }
 
     // Color prop
@@ -76,6 +76,22 @@
 
     &[au-color="hight"] {
         @include setAuButton(var(--color-white), var(--color-white), var(--color-hight-contrast), var(--color-hight-contrast-hover));
+    }
+
+    // Transparent
+    &[au-transparent] {
+        // Color prop
+        &[au-color="primary"] {
+            @include setAuButton($color-caribbean-green, $color-caribbean-green-hover, transparent, transparent);
+        }
+
+        &[au-color="hight"] {
+            @include setAuButton($color-hight-contrast, $color-hight-contrast-hover, transparent, transparent);
+        }
+
+        .au-button-element {
+            box-shadow: none !important;
+        }
     }
 
     // Block
@@ -90,7 +106,7 @@
     // Circle
     &[au-circle] {
         .au-button-element {
-            border-radius: 50px;
+            border-radius: 50px !important;
         }
     }
 }

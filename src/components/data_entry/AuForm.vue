@@ -12,7 +12,7 @@
 
         <div v-if="colon" class="required">
             <div class="required-pin"></div>
-            <label>{{ $t('required') }}</label>
+            <label>{{ $t('aur_design.required') }}</label>
         </div>
     </form>
 </template>

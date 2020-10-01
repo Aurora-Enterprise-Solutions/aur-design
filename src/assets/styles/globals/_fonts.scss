@@ -81,6 +81,32 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-title);
 }
 
-label, span, p {
+label, span, p, a {
     color: var(--color-paragraph);
+    font-size: $font-size-regular;
+    font-weight: $font-weight-regular;
+}
+
+a {
+    color: $color-portage;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+        color: $color-hight-contrast;
+    }
+
+    &:active {
+        color: $color-portage;
+    }
+
+    &[no-margin] {
+        margin: 0 !important;
+    }
+}
+
+p, a {
+    margin: 0 0 0.3rem 0;
 }

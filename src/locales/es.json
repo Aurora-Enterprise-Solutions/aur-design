@@ -1,3 +1,5 @@
 {
-  "required": "Campo obligatorio."
+  "aur_design": {
+    "required": "Campo obligatorio."
+  }
 }

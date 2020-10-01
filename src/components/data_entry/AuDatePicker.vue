@@ -5,7 +5,7 @@
             <div class="date-picker-card">
                 <au-row class="date-picker-current">
                     <au-col class="date-picker-arrow-left" :span="0">
-                        <
+                        
                     </au-col>
 
                     <au-col class="date-picker-date" :span="24">

@@ -4,18 +4,19 @@
 
 .au-card {
     background-color: var(--color-white);
-    border: solid 0.4px var(--color-border);
+    border: solid 0.4px transparent;
     border-radius: 4px;
     box-shadow: var(--color-border) 0px 3px 16px -5px;
     transition: transform 0.3s,
                 box-shadow 0.3s;
 
     & > .header {
-        border-bottom: solid 0.4px var(--color-border);
+        border-bottom: solid 0.4px transparent;
         display: flex;
         flex-wrap: nowrap;
         align-items: stretch;
         overflow: auto;
+        cursor: default;
 
         .title-section {
             flex-grow: 1;
@@ -73,5 +74,13 @@
         opacity: 0;
         transition: opacity 0.3s ease-in,
                     max-height 0.4s 0.3s ease-in-out;
+    }
+
+    &[au-border] {
+        border: solid 0.4px var(--color-border);
+
+        & > .header {
+            border-bottom: solid 0.4px var(--color-border);
+        }
     }
 }

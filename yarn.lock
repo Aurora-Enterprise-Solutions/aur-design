@@ -2,15 +2,6 @@
 # yarn lockfile v1
 
 
-"@aurora-enterprise-solutions/aur-icon@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@aurora-enterprise-solutions/aur-icon/-/aur-icon-0.2.4.tgz#09ee67d6e1ff9d94faec3f1f59588f97ea5f78a6"
-  integrity sha512-+9Z0aJWml5SE4Rrn7nzW3+6uhBrktZq9wsO0Rym1fDzl3rcUTtz7zBnaKBefy7ewxX8zDahwDlkLe4no5FFGWQ==
-  dependencies:
-    core-js "^3.6.4"
-    lottie-web "^5.6.10"
-    vue "^2.6.11"
-
 "@babel/code-frame@7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -7025,11 +7016,6 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
-
-lottie-web@^5.6.10:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.0.tgz#628421df7a43c20a5171ac65bdc7bb4c499f8f37"
-  integrity sha512-mCj9KaVR1FdcaRuKB0oqKqC2R+awlqGgx38Sy4q3H0+aNPJ9Ut5LIvBNGyMHiZRpJlPcRQ1Mk//fp2bY3QYq1A==
 
 loud-rejection@^1.0.0:
   version "1.6.0"

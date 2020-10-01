@@ -32,7 +32,6 @@
     "test:watch": "jest --watch --verbose"
   },
   "dependencies": {
-    "@aurora-enterprise-solutions/aur-icon": "^0.2.4",
     "autonumeric": "^4.6.0",
     "core-js": "^3.6.4",
     "lodash": "^4.17.19",
