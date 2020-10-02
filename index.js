@@ -8,6 +8,7 @@ let AuButton = require('./src/components/general/AuButton.vue')
 let AuCard = require('./src/components/data_display/AuCard.vue')
 let AuNavigator = require('./src/components/data_display/AuNavigator.vue')
 let AuNavigatorLink = require('./src/components/data_display/AuNavigatorLink.vue')
+let AuBadge = require('./src/components/data_display/AuBadge.vue')
 
 // DATA-ENTRY
 let AuInput = require('./src/components/data_entry/AuInput.vue')
@@ -28,7 +29,8 @@ const components = [
     AuInputNumber,
     AuForm,
     AuFormItem,
-    AuDatePicker
+    AuDatePicker,
+    AuBadge
 ]
 
 const install = function install(Vue, options) {
