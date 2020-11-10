@@ -1,0 +1,77 @@
+@mixin setAuNotificationColor($color: $color-caribbean-green) {
+    .card {
+        max-width: 500px;
+        min-width: 300px;
+        background-color: $color-white;
+        border: solid 1px $color;
+        border-radius: 4px;
+        animation: au-notification-show 0.2s 0.2s;
+
+        & > div {
+            padding: 10px 20px;
+
+            &:nth-child(1) {
+                background-color: $color;
+                border-radius: 2px 2px 0 0;
+                
+                h6 {
+                    color: $color-white;
+                }
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            &:nth-child(3) {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.au-notification {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-blur, 0.7);
+    animation: au-notification-show 0.2s;
+
+    &[au-type="success"] {
+        @include setAuNotificationColor($color-caribbean-green);
+    }
+
+    &[au-type="warning"] {
+        @include setAuNotificationColor($color-warning);
+    }
+
+    &[au-type="error"] {
+        @include setAuNotificationColor($color-radical-red);
+    }
+
+    &[au-type="confirm"] {
+        @include setAuNotificationColor($color-confirm);
+    }
+
+    &[au-type="info"] {
+        @include setAuNotificationColor($color-dodger-blue);
+    }
+
+    @keyframes au-notification-show {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}

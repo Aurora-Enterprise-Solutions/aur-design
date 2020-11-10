@@ -166,7 +166,7 @@ export default {
             else {
                 if (this.height !== undefined)
                     this.$refs.body.style.maxHeight = this.height + "px"
-                else
+                else if (this.$refs.body)
                     this.$refs.body.style.maxHeight = this.$refs.body.scrollHeight + "px"
             }
         }

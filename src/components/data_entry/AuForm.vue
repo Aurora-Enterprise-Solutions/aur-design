@@ -164,6 +164,32 @@ export default {
         },
 
         /**
+         * @public
+         * Oculta los mensajes de los inputs del formulario.
+         */
+        hideMessages () {
+            Object.keys(this.items).forEach((key) => {
+                this.items[key]['message'] = undefined
+            })
+        },
+
+        /**
+         * @public
+         * Oculta los mensajes de un input en específico.
+         */
+        hideItemMessages (item) {
+            this.items[item]['message'] = undefined
+        },
+
+        /**
+         * @public
+         * Valida un input en específico.
+         */
+        async validateProp (prop) {
+            await this.validateInput(prop, this.model[prop])
+        },
+
+        /**
          * Valida un input en específico.
          * @param item prop del form-item
          */
@@ -188,9 +214,10 @@ export default {
          * @param value valor actual del input
          */
         async validateRules (rules, value) {
-            return await new Promise((resolve, reject) => {
+            return await new Promise(async (resolve, reject) => {
                 if (rules) {
-                    rules.forEach((r) => {
+                    for (let i = 0; i < rules.length; i++) {
+                        let r = rules[i]
                         let flag = true
 
                         switch (r.type) {
@@ -237,17 +264,16 @@ export default {
                             }
 
                             case 'validator': {
-                                r.implement(r, value, (message) => {
-                                    if (message)
-                                        reject (message)
-                                })
+                                let message = await r.implement(r, value)
+                                if (message)
+                                    reject(message)
                                 break
                             }
                         }
 
                         if (!flag)
-                            reject (r.message ? r.message : '')
-                    })
+                            reject(r.message ? r.message : '')
+                    }
                 }
 
                 resolve()

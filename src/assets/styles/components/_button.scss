@@ -2,7 +2,11 @@
  * BUTTON
  */
 
-@mixin setAuButton($color, $color-hover, $bkg-color, $bkg-hover-color) {
+@mixin setAuButton($color, $color-hover, $bkg-color, $bkg-hover-color, $color-disabled: var(--color-white), $bkg-color-disabled: var(--color-disabled)) {
+    .au-icon {
+        fill: $color;
+    }
+
     .au-button-element {
         // Wrapper
         background-color: $bkg-color;
@@ -39,27 +43,50 @@
             }
         }
 
-        &:hover,
-        &:active {
-            color: $color-hover;
-            background-color: $bkg-hover-color;
+        &:not([au-loading]) {
+            &:hover,
+            &:active {
+                color: $color-hover;
+                background-color: $bkg-hover-color;
+            }
         }
 
         &:focus {
             outline: none;
         }
 
+        &[au-transparent] {
+            background-color: transparent;
+            color: $bkg-color;
+
+            &:hover {
+                color: $bkg-hover-color;
+                background-color: transparent;
+                border-color: $bkg-hover-color;
+            }
+
+            &:disabled {
+                color: $bkg-color-disabled;
+                background-color: transparent;
+            }
+        }
+
         &:disabled {
-            color: var(--color-white);
-            background-color: var(--color-disabled);
+            color: $color-disabled;
+            background-color: $bkg-color-disabled;
             box-shadow: none;
             pointer-events: none;
+        }
+
+        &[au-bordered] {
+            border: solid 2px $bkg-color;
         }
     }
 }
 
 .au-button {
     display: inline-block;
+    position: relative;
 
     .au-button-element {
         font-family: Inter, Helvetica;
@@ -67,28 +94,35 @@
         font-weight: $font-weight-medium;
         position: relative;
         overflow: hidden;
+        user-select: none;
+    }
+
+    .au-icon {
+        animation: button-spin 1s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 1s;
+        pointer-events: none;
+
+        &[au-loading] {
+            opacity: 1;
+        }
     }
 
     // Color prop
     &[au-color="primary"] {
-        @include setAuButton(var(--color-white), var(--color-white), var(--color-caribbean-green), var(--color-caribbean-green-hover));
+        @include setAuButton($color-white, $color-white, $color-caribbean-green, $color-caribbean-green-hover);
     }
 
     &[au-color="hight"] {
-        @include setAuButton(var(--color-white), var(--color-white), var(--color-hight-contrast), var(--color-hight-contrast-hover));
+        @include setAuButton($color-white, $color-white, $color-hight-contrast, $color-hight-contrast-hover);
     }
 
     // Transparent
     &[au-transparent] {
-        // Color prop
-        &[au-color="primary"] {
-            @include setAuButton($color-caribbean-green, $color-caribbean-green-hover, transparent, transparent);
-        }
-
-        &[au-color="hight"] {
-            @include setAuButton($color-hight-contrast, $color-hight-contrast-hover, transparent, transparent);
-        }
-
         .au-button-element {
             box-shadow: none !important;
         }
@@ -107,6 +141,13 @@
     &[au-circle] {
         .au-button-element {
             border-radius: 50px !important;
+        }
+    }
+
+    &[au-loading] {
+        .au-button-element {
+            color: transparent;
+            cursor: default;
         }
     }
 }

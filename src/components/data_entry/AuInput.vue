@@ -1,6 +1,6 @@
 <template>
     <div class="au-input au-input-text">
-        <input :value="value" :type="_type" :placeholder="placeholder" @change="onChange" @input="onInput">
+        <input :value="value" :type="_type" :placeholder="placeholder" @change="onChange" @input="onInput" @keydown="onKeydown">
     </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
     name: 'AuInput',
     props: {
         /**
-         * @values text, search, url, email, date, time, datetime-local, month
+         * @values text, search, url, email, date, time, datetime-local, month, password
          */
         type: {
             required: false,
@@ -31,7 +31,7 @@ export default {
     },
     computed: {
         _type () {
-            return ['text', 'search', 'url', 'email', 'date', 'time', 'datetime-local', 'month'].includes(this.type) ? this.type : 'text'
+            return ['text', 'search', 'url', 'email', 'date', 'time', 'datetime-local', 'month', 'password'].includes(this.type) ? this.type : 'text'
         }
     },
     methods: {
@@ -41,6 +41,10 @@ export default {
 
         onInput (event) {
             this.$emit('input', event.target.value)
+        },
+
+        onKeydown (event) {
+            this.$emit('keydown', event)
         }
     },
 }

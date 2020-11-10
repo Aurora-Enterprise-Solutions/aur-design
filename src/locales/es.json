@@ -1,5 +1,16 @@
 {
   "aur_design": {
-    "required": "Campo obligatorio."
+    "required": "Campo obligatorio.",
+    "notification": {
+      "title": {
+        "success": "Éxito",
+        "warning": "Cuidado",
+        "error": "Error",
+        "confirm": "Confirmar",
+        "info": "Información"
+      },
+      "ok_text": "Confirmar",
+      "cancel_text": "Cancelar"
+    }
   }
 }

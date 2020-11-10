@@ -6,7 +6,8 @@
     --color-title: #191919;
     --color-paragraph: #515151;
     --color-placeholder: #888888;
-    --color-border: rgb(228, 228, 228);
+    --color-blur: #FFFFFF;
+    --color-border: #e4e4e4;
     --color-disabled: #D3D9E1;
     --color-background: #f5f8fe; //E6EEF9 ecedf2 f5f8fe
     --color-caribbean-green: #07D79C;
@@ -15,9 +16,11 @@
     --color-hight-contrast-hover: #141F72;
     --color-portage: #8B91DD;
     --color-radical-red: #F6576E;
+    --color-warning: #ffe600;
+    --color-confirm: #88009a;
+    --color-dodger-blue: #2C7DFA;
 
     // Otros
-    --color-dodger-blue: #2C7DFA;
     --color-egyptian-blue: #0F36A5;
     --color-midnight-blue: #141F72;
     --color-simply-red: #ff798d;
@@ -28,6 +31,7 @@ $color-white: var(--color-white);
 $color-title: var(--color-title);
 $color-paragraph: var(--color-paragraph);
 $color-placeholder: var(--color-placeholder);
+$color-blur: var(--color-blur);
 $color-border: var(--color-border);
 $color-disabled: var(--color-disabled);
 $color-background: var(--color-background);
@@ -37,3 +41,6 @@ $color-hight-contrast: var(--color-hight-contrast);
 $color-hight-contrast-hover: var(--color-hight-contrast-hover);
 $color-portage: var(--color-portage);
 $color-radical-red: var(--color-radical-red);
+$color-warning: var(--color-warning);
+$color-confirm: var(--color-confirm);
+$color-dodger-blue: var(--color-dodger-blue);

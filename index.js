@@ -1,21 +1,22 @@
+// COMPONENTS
 // GENERAL
-let AuRow = require('./src/components/general/AuRow.vue')
-let AuCol = require('./src/components/general/AuCol.vue')
-let AuText = require('./src/components/general/AuText.vue')
-let AuButton = require('./src/components/general/AuButton.vue')
+import { default as AuRow } from "./src/components/general/AuRow.vue"
+import { default as AuCol } from "./src/components/general/AuCol.vue"
+import { default as AuText } from "./src/components/general/AuText.vue"
+import { default as AuButton } from "./src/components/general/AuButton.vue"
 
 // DATA-DISPLAY
-let AuCard = require('./src/components/data_display/AuCard.vue')
-let AuNavigator = require('./src/components/data_display/AuNavigator.vue')
-let AuNavigatorLink = require('./src/components/data_display/AuNavigatorLink.vue')
-let AuBadge = require('./src/components/data_display/AuBadge.vue')
+import { default as AuCard } from "./src/components/data_display/AuCard.vue"
+import { default as AuNavigator } from "./src/components/data_display/AuNavigator.vue"
+import { default as AuNavigatorLink } from "./src/components/data_display/AuNavigatorLink.vue"
+import { default as AuBadge } from "./src/components/data_display/AuBadge.vue"
 
 // DATA-ENTRY
-let AuInput = require('./src/components/data_entry/AuInput.vue')
-let AuInputNumber = require('./src/components/data_entry/AuInputNumber.vue')
-let AuForm = require('./src/components/data_entry/AuForm.vue')
-let AuFormItem = require('./src/components/data_entry/AuFormItem.vue')
-let AuDatePicker = require('./src/components/data_entry/AuDatePicker.vue')
+import { default as AuInput } from "./src/components/data_entry/AuInput.vue"
+import { default as AuInputNumber } from "./src/components/data_entry/AuInputNumber.vue"
+import { default as AuForm } from "./src/components/data_entry/AuForm.vue"
+import { default as AuFormItem } from "./src/components/data_entry/AuFormItem.vue"
+import { default as AuDatePicker } from "./src/components/data_entry/AuDatePicker.vue"
 
 const components = [
     AuRow,
@@ -33,12 +34,41 @@ const components = [
     AuBadge
 ]
 
-const install = function install(Vue, options) {
+// PROTOTYPES
+import { default as notification } from "./src/prototypes/notification"
+
+const prototypes = {
+    notification
+}
+
+const install = function install(app) {
     components.map(function (component) {
-        Vue.component(component.default.name, component.default);
+        app.component(component.name, component);
+    });
+
+    Object.keys(prototypes).forEach(function (key) {
+        app.prototype['$' + key] = prototypes[key];
     });
 };
 
+export {
+    install,
+    notification,
+    AuRow,
+    AuCol,
+    AuText,
+    AuButton,
+    AuCard,
+    AuNavigator,
+    AuNavigatorLink,
+    AuInput,
+    AuInputNumber,
+    AuForm,
+    AuFormItem,
+    AuDatePicker,
+    AuBadge   
+};
+
 export default {
-    install: install
+    install
 };
