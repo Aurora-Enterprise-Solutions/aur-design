@@ -44,8 +44,13 @@
         font-weight: $font-weight-medium;
     }
 
-    .help {
+    .help,
+    .help-slot {
         margin: 6px 0 4px 0;
+    }
+
+    .help-slot {
+        padding: 0 2px;
     }
 
     .message {

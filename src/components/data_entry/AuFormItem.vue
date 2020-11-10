@@ -12,9 +12,14 @@
             <slot></slot>
         </div>
 
-        <p class="help">
-            {{ help }}
-        </p>
+        <div class="help-slot">
+            <!-- @slot Help ayuda para el usuario. -->
+            <slot name="help">
+                <p class="help">
+                    {{ help }}
+                </p>
+            </slot>
+        </div>
 
         <p v-if="message" class="message">
             {{ message }}

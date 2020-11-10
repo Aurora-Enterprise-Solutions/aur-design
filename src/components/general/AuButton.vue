@@ -1,9 +1,19 @@
 <template>
-    <div class="au-button" :au-color="_color" :au-block="block" :au-circle="circle" :au-transparent="transparent">
-        <button ref="button" class="au-button-element" :type="_htmlType" :disabled="disabled" @click="onClick($event)">
+    <div class="au-button" :au-color="_color" :au-block="block" :au-circle="circle" :au-transparent="transparent" :au-loading="loading">
+        <button ref="button" 
+                class="au-button-element" 
+                :type="_htmlType" 
+                :disabled="disabled" 
+                :au-transparent="transparent" 
+                :au-loading="loading" 
+                :au-bordered="bordered" 
+                @click="onClick($event)">
             <!-- @slot Usa este slot para introducir el texto del botón -->
             <slot></slot>
         </button>
+
+        <!--Spin de carga-->
+        <au-icon icon="circle_spin" animatable loop :au-loading="loading"></au-icon>
     </div>
 </template>
 
@@ -69,13 +79,32 @@
             },
 
             /**
-             * deja el fondo transparente y las letras del color seleccionado.
+             * Deja el fondo transparente y las letras del color seleccionado.
              */
             transparent: {
                 type: Boolean,
                 required: false,
                 default: false
-            }
+            },
+
+            /**
+             * Deja el borde del boton marcado con el color especificado.
+             */
+            bordered: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
+
+            /**
+             * Define si el botón está cargando o no.
+             * Si su valor es true, se desplegará un spin de carga y el botón no capturará el evento click.
+             */
+            loading: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
         },
         data() {
             return {
@@ -94,7 +123,7 @@
         },
         methods: {
             onClick(event) {
-                if (!this.disabled) {
+                if (!this.disabled && !this.loading) {
                     // Animación
                     let ripples = document.createElement('span');
                     ripples.style.left = event.offsetX + 'px';
