@@ -4,6 +4,7 @@ import { default as AuRow } from "./src/components/general/AuRow.vue"
 import { default as AuCol } from "./src/components/general/AuCol.vue"
 import { default as AuText } from "./src/components/general/AuText.vue"
 import { default as AuButton } from "./src/components/general/AuButton.vue"
+import { default as AuIcon } from "./src/components/general/AuIcon.vue"
 
 // DATA-DISPLAY
 import { default as AuCard } from "./src/components/data_display/AuCard.vue"
@@ -23,6 +24,7 @@ const components = [
     AuCol,
     AuText,
     AuButton,
+    AuIcon,
     AuCard,
     AuNavigator,
     AuNavigatorLink,
@@ -58,6 +60,7 @@ export {
     AuCol,
     AuText,
     AuButton,
+    AuIcon,
     AuCard,
     AuNavigator,
     AuNavigatorLink,

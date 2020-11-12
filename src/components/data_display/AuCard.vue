@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import ResizeObserver from 'resize-observer-polyfill'
 import AuText from './../general/AuText'
 
 export default {

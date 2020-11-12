@@ -1,0 +1,22 @@
+.au-icon {
+    display: flex;
+    width: 16px;
+    fill: $color-default-normal-icon;
+    stroke: $color-default-normal-icon;
+    transition: fill 0.3s ease,
+                stroke 0.3s ease;
+
+    path {
+        fill: inherit;
+        stroke: inherit;
+    }
+    
+    &[au-clickable] {
+        cursor: pointer;
+
+        &:hover {
+            fill: $color-default-hover-icon;
+            stroke: $color-default-hover-icon;
+        }
+    }
+}

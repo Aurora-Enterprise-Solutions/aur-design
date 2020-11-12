@@ -20,6 +20,9 @@
     --color-confirm: #88009a;
     --color-dodger-blue: #2C7DFA;
 
+    --color-default-normal-icon: #515151;
+    --color-default-hover-icon: #07D79C;
+
     // Otros
     --color-egyptian-blue: #0F36A5;
     --color-midnight-blue: #141F72;
@@ -44,3 +47,5 @@ $color-radical-red: var(--color-radical-red);
 $color-warning: var(--color-warning);
 $color-confirm: var(--color-confirm);
 $color-dodger-blue: var(--color-dodger-blue);
+$color-default-normal-icon: var(--color-default-normal-icon);
+$color-default-hover-icon: var(--color-default-hover-icon);
