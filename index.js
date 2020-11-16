@@ -37,7 +37,7 @@ const components = [
 ]
 
 // PROTOTYPES
-import { default as notification } from "./src/prototypes/notification"
+import { default as notification } from "./src/prototypes/notification.js"
 
 const prototypes = {
     notification
