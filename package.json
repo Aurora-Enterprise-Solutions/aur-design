@@ -49,7 +49,6 @@
     "babel-loader": "^8.1.0",
     "jest-canvas-mock": "^2.2.0",
     "node-sass": "^4.13.1",
-    "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-i18n": "~1.0.1",
