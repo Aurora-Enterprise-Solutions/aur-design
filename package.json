@@ -3,7 +3,7 @@
   "version": "0.3.6",
   "private": false,
   "license": "MIT",
-  "main": "./dist/aur-design.common.js",
+  "main": "./dist/aur-design.umd.min.js",
   "files": [
     "dist/*",
     "*.md",

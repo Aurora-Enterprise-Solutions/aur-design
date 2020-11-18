@@ -43,6 +43,9 @@ const prototypes = {
     notification
 }
 
+// LOCALES
+import aurES from "./src/locales/es.json"
+
 const AurDesign = {
     install(Vue, options) {
         components.map(function (component) {
@@ -61,7 +64,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
+    // Prototypes
     notification,
+
+    // Locales
+    aurES,
+
+    // Components
     AuRow,
     AuCol,
     AuText,
