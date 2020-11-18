@@ -1,9 +1,5 @@
-import Vue from 'vue'
-import AuroraIcon from '@aurora-enterprise-solutions/aur-icon'
 import { mount, shallowMount } from '@vue/test-utils'
 import AuCard from '@/components/data_display/AuCard.vue'
-
-Vue.use(AuroraIcon)
 
 describe('Componente AuCard', () => {
 

@@ -67,9 +67,6 @@
       "jest-canvas-mock"
     ],
     "preset": "@vue/cli-plugin-unit-jest",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/aur-icons/"
-    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(@aurora-enterprise-solutions)/)"
     ]

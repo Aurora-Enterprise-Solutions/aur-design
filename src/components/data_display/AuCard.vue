@@ -35,6 +35,7 @@
 
 <script>
 import AuText from './../general/AuText'
+import AuIcon from './../general/AuIcon'
 
 export default {
     name: 'AuCard',
@@ -103,7 +104,7 @@ export default {
             default: true
         }
     },
-    components: { AuText },
+    components: { AuText, AuIcon },
     data() {
         return {
             isCollapsed: this.defaultCollapsed,
