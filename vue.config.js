@@ -1,4 +1,5 @@
 module.exports = {
+  outputDir: "lib",
   pluginOptions: {
     i18n: {
       locale: 'es',
