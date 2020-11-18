@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "lib/aur-design.umd.min.js",
   "files": [
-    "lib/aur-design.umd.min.js",
+    "lib",
     "*.md",
     "LICENSE"
   ],
