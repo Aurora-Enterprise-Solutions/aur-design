@@ -3,17 +3,16 @@
   "version": "0.3.2",
   "private": false,
   "license": "MIT",
-  "main": "./dist/aur-design.umd.js",
+  "main": "./dist/aur-design.common.js",
   "files": [
-    "dist/*",
-    "src/components/*",
-    "src/assets/**/*.css",
-    "public/*",
-    "*.json",
-    "*.js",
+    "dist",
     "*.md",
     "LICENSE"
   ],
+  "author": {
+    "name": "Jesús Barrientos",
+    "email": "jesus.barrientos@aurora-enterprise.com"
+  },
   "homepage": "https://github.com/Aurora-Enterprise-Solutions",
   "repository": {
     "type": "git",

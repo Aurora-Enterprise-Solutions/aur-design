@@ -43,18 +43,24 @@ const prototypes = {
     notification
 }
 
-const install = function install(app) {
-    components.map(function (component) {
-        app.component(component.name, component);
-    });
-
-    Object.keys(prototypes).forEach(function (key) {
-        app.prototype['$' + key] = prototypes[key];
-    });
+const AurDesign = {
+    install(Vue, options) {
+        components.map(function (component) {
+            Vue.component(component.name, component);
+        });
+    
+        Object.keys(prototypes).forEach(function (key) {
+            Vue.prototype['$' + key] = prototypes[key];
+        });
+    }
 };
 
+// Automatic installation if Vue has been added to the global scope.
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(AurDesign);
+}
+
 export {
-    install,
     notification,
     AuRow,
     AuCol,
@@ -72,6 +78,4 @@ export {
     AuBadge   
 };
 
-export default {
-    install
-};
+export default AurDesign;
