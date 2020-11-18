@@ -1,6 +1,6 @@
 {
   "name": "@aurora-enterprise-solutions/aur-design",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "private": false,
   "license": "MIT",
   "main": "./dist/aur-design.umd.min.js",
