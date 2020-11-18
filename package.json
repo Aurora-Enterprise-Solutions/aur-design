@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "./dist/aur-design.common.js",
   "files": [
-    "dist/*",
+    "./dist/*",
     "*.md",
     "LICENSE"
   ],
