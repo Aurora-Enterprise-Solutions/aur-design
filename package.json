@@ -6,6 +6,7 @@
   "main": "./dist/aur-design.umd.min.js",
   "files": [
     "dist/*",
+    ".npmignore",
     "*.md",
     "LICENSE"
   ],
