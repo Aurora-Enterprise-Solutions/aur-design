@@ -3,10 +3,9 @@
   "version": "0.3.8",
   "private": false,
   "license": "MIT",
-  "main": "./dist/aur-design.umd.min.js",
+  "main": "dist/aur-design.umd.min.js",
   "files": [
-    "dist/*",
-    ".npmignore",
+    "dist/aur-design.umd.min.js",
     "*.md",
     "LICENSE"
   ],
