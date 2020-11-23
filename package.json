@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "dist/aur-design.umd.min.js",
   "files": [
-    "dist",
+    "dist/aur-design.umd.min.js",
+    "src/assets/styles/styles.css",
     "*.md",
     "LICENSE"
   ],
