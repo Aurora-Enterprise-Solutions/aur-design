@@ -1,17 +1,20 @@
 {
   "name": "@aurora-enterprise-solutions/aur-design",
-  "version": "0.2.5-0",
+  "version": "0.3.16",
   "private": false,
   "license": "MIT",
-  "main": "./dist/aur-design.umd.js",
+  "main": "dist/aur-design.umd.min.js",
   "files": [
-    "dist/*",
-    "src/assets/**/*.css",
-    "*.json",
-    "*.js",
+    "dist/aur-design.umd.min.js",
+    "src/assets/styles/styles.css",
+    "src/assets/fonts",
     "*.md",
     "LICENSE"
   ],
+  "author": {
+    "name": "Jesús Barrientos",
+    "email": "jesus.barrientos@aurora-enterprise.com"
+  },
   "homepage": "https://github.com/Aurora-Enterprise-Solutions",
   "repository": {
     "type": "git",
@@ -23,7 +26,7 @@
     "build": "vue-cli-service build",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link",
-    "push": "vue-cli-service build --target lib --name aur-design ./index.js && np --skip-2fa --no-publish",
+    "push": "publish.sh",
     "styleguide": "vue-styleguidist server --watch --config styleguide.config.js",
     "styleguide:build": "vue-styleguidist build --config styleguide.config.js",
     "test": "jest --verbose --colors",
@@ -33,6 +36,7 @@
     "autonumeric": "^4.6.0",
     "core-js": "^3.6.4",
     "lodash": "^4.17.19",
+    "lottie-web": "^5.7.4",
     "vue": "^2.6.11",
     "vue-i18n": "^8.17.3",
     "vue-the-mask": "^0.11.1"
@@ -65,9 +69,6 @@
       "jest-canvas-mock"
     ],
     "preset": "@vue/cli-plugin-unit-jest",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/aur-icons/"
-    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(@aurora-enterprise-solutions)/)"
     ]

@@ -25,7 +25,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [ ] Rate
 - [ ] Slider
 - [ ] Switch
-- [ ] Badge
+- [x] Budge
 - [x] Card
 - [ ] Collapse
 - [ ] Comment
@@ -37,7 +37,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [ ] Alert
 - [ ] Message
 - [ ] Modal
-- [ ] Notification
+- [x] Notification
 
 ## Licencia
 Este proyecto cuenta con licencia conforme a los términos de la licencia MIT.

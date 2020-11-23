@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import AuIcon from './../general/AuIcon'
+
 export default {
     name: 'AuNavigatorLink',
     props: {
@@ -67,6 +69,7 @@ export default {
             default: undefined
         }
     },
+    components: { AuIcon },
     data() {
         return {
             expanded: false

@@ -1,0 +1,8 @@
+  30-09-2020 0:58:56: Iniciando composición "tempConverterComp".
+
+  Salida a: C:\Users\jesus\AppData\Local\Temp\Bodymovin\jfwqo0h8bk\raw\images\img_1.png    30-09-2020 0:58:56: Composición finalizada "tempConverterComp".
+
+
+  Tiempo total transc.: 0 segundos
+Registro cerrado en 30-09-2020 a las 0:58:56
+

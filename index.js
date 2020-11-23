@@ -4,6 +4,7 @@ import { default as AuRow } from "./src/components/general/AuRow.vue"
 import { default as AuCol } from "./src/components/general/AuCol.vue"
 import { default as AuText } from "./src/components/general/AuText.vue"
 import { default as AuButton } from "./src/components/general/AuButton.vue"
+import { default as AuIcon } from "./src/components/general/AuIcon.vue"
 
 // DATA-DISPLAY
 import { default as AuCard } from "./src/components/data_display/AuCard.vue"
@@ -22,6 +23,7 @@ const components = [
     AuRow,
     AuCol,
     AuText,
+    AuIcon,
     AuButton,
     AuCard,
     AuNavigator,
@@ -35,28 +37,44 @@ const components = [
 ]
 
 // PROTOTYPES
-import { default as notification } from "./src/prototypes/notification"
+import { default as notification } from "./src/prototypes/notification.js"
 
 const prototypes = {
     notification
 }
 
-const install = function install(app) {
-    components.map(function (component) {
-        app.component(component.name, component);
-    });
+// LOCALES
+import aurES from "./src/locales/es.json"
 
-    Object.keys(prototypes).forEach(function (key) {
-        app.prototype['$' + key] = prototypes[key];
-    });
+const AurDesign = {
+    install(Vue, options) {
+        components.map(function (component) {
+            Vue.component(component.name, component);
+        });
+    
+        Object.keys(prototypes).forEach(function (key) {
+            Vue.prototype['$' + key] = prototypes[key];
+        });
+    }
 };
 
+// Automatic installation if Vue has been added to the global scope.
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(AurDesign);
+}
+
 export {
-    install,
+    // Prototypes
     notification,
+
+    // Locales
+    aurES,
+
+    // Components
     AuRow,
     AuCol,
     AuText,
+    AuIcon,
     AuButton,
     AuCard,
     AuNavigator,
@@ -69,6 +87,4 @@ export {
     AuBadge   
 };
 
-export default {
-    install
-};
+export default AurDesign;

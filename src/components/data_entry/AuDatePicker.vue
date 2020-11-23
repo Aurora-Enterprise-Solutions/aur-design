@@ -23,10 +23,12 @@
 
 <script>
 // import { mask } from 'vue-the-mask'
+import AuIcon from './../general/AuIcon'
 
 export default {
     name: 'AuDatePicker',
     // directives: { mask },
+    components: { AuIcon },
     props: {
         mobile: {
             required: false,
