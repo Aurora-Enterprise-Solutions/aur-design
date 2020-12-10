@@ -31,6 +31,15 @@
                         <au-button color="hight" circle @click="buttonClick">Hight Contrast</au-button>
                     </au-col>
                 </au-row>
+
+                <au-row :gutter="[16, 8]" wrap="wrap">
+                    <au-col>
+                        <au-button color="primary" transparent @click="buttonClick">Primary</au-button>
+                    </au-col>
+                    <au-col>
+                        <au-button color="hight" transparent @click="buttonClick">Hight Contrast</au-button>
+                    </au-col>
+                </au-row>
             </div>
         </au-card>
     </div>

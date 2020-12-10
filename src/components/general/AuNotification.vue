@@ -10,8 +10,8 @@
             </div>
 
             <div class="button-section">
-                <au-button v-if="showOk" circle transparent @click="onOk">{{ okButtonLabel }}</au-button>
-                <au-button v-if="showCancel && _type == 'confirm'" circle transparent bordered @click="onCancel">{{ cancelButtonLabel }}</au-button>
+                <au-button v-if="showOk" transparent @click="onOk">{{ okButtonLabel }}</au-button>
+                <au-button v-if="showCancel && _type == 'confirm'" color="hight" transparent @click="onCancel">{{ cancelButtonLabel }}</au-button>
             </div>
         </div>
     </div>

@@ -1,9 +1,11 @@
-@mixin setAuNotificationColor($color: $color-caribbean-green) {
+@mixin setAuNotificationColor() {
     .card {
+        margin: 20px;
         max-width: 500px;
         min-width: 300px;
         background-color: $color-white;
-        border: solid 1px $color;
+        box-shadow: $color-border 0px 1px 10px 1px;
+        border: solid 1px $color-border;
         border-radius: 4px;
         animation: au-notification-show 0.2s 0.2s;
 
@@ -11,11 +13,10 @@
             padding: 10px 20px;
 
             &:nth-child(1) {
-                background-color: $color;
                 border-radius: 2px 2px 0 0;
                 
                 h6 {
-                    color: $color-white;
+                    color: $color-title;
                 }
             }
 
@@ -41,28 +42,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     background-color: rgba($color-blur, 0.7);
     animation: au-notification-show 0.2s;
+    z-index: 900;
 
-    &[au-type="success"] {
-        @include setAuNotificationColor($color-caribbean-green);
-    }
-
-    &[au-type="warning"] {
-        @include setAuNotificationColor($color-warning);
-    }
-
-    &[au-type="error"] {
-        @include setAuNotificationColor($color-radical-red);
-    }
-
-    &[au-type="confirm"] {
-        @include setAuNotificationColor($color-confirm);
-    }
-
+    &[au-type="success"],
+    &[au-type="warning"],
+    &[au-type="error"],
+    &[au-type="confirm"],
     &[au-type="info"] {
-        @include setAuNotificationColor($color-dodger-blue);
+        @include setAuNotificationColor();
     }
 
     @keyframes au-notification-show {

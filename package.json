@@ -23,7 +23,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "sass": "sass --watch src/assets/styles:src/assets/styles --style=compressed",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name aur-design ./index.js",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "link": "npm rm @aurora-enterprise-solutions/aur-icon -g && npm link",
     "push": "publish.sh",
