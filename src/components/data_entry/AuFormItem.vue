@@ -98,7 +98,8 @@ export default {
     },
     methods: {
         setInputError (flag) {
-            this.inputField.setAttribute('has-error', flag)
+            if (this.inputField != null)
+                this.inputField.setAttribute('has-error', flag)
         }
     },
 }

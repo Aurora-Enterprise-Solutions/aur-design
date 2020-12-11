@@ -58,6 +58,14 @@
             onClick() {
                 if (this.clickable)
                     this.$emit('click', this.anim)
+            },
+
+            goToAndStop(value) {
+                this.anim.goToAndStop((value - 1), true)
+            },
+
+            play() {
+                this.anim.goToAndPlay(0, true)
             }
         }
     }

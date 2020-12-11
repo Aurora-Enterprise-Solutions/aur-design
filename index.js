@@ -18,6 +18,7 @@ import { default as AuInputNumber } from "./src/components/data_entry/AuInputNum
 import { default as AuForm } from "./src/components/data_entry/AuForm.vue"
 import { default as AuFormItem } from "./src/components/data_entry/AuFormItem.vue"
 import { default as AuDatePicker } from "./src/components/data_entry/AuDatePicker.vue"
+import { default as AuCheckbox } from "./src/components/data_entry/AuCheckbox.vue"
 
 const components = [
     AuRow,
@@ -33,7 +34,8 @@ const components = [
     AuForm,
     AuFormItem,
     AuDatePicker,
-    AuBadge
+    AuBadge,
+    AuCheckbox
 ]
 
 // PROTOTYPES
@@ -84,7 +86,8 @@ export {
     AuForm,
     AuFormItem,
     AuDatePicker,
-    AuBadge   
+    AuBadge,
+    AuCheckbox
 };
 
 export default AurDesign;

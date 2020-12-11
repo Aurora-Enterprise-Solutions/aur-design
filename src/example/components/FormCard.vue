@@ -14,7 +14,7 @@
             <div>
                 <au-row :gutter="16">
                     <au-col :span="8">
-                        <au-form ref="formCustom" title="Perfil del Usuario" :model="model" :rules="rules" :colon="false">
+                        <au-form ref="formCustom" title="Perfil del Usuario" :model="model" :rules="rules" :colon="true">
                             <au-row :gutter="16">
                                 <au-col :span="12">
                                     <au-form-item prop="name" label="Nombre">
@@ -33,6 +33,14 @@
                                 <au-col :span="24">
                                     <au-form-item prop="company" label="Compañía" help="Debe ser escrita en mayúscula.">
                                         <au-input v-model="model.company"></au-input>
+                                    </au-form-item>
+                                </au-col>
+                            </au-row>
+
+                            <au-row :gutter="16">
+                                <au-col :span="24">
+                                    <au-form-item prop="hasCar">
+                                        <au-checkbox v-model="model.hasCar" label="Tiene Auto"/>
                                     </au-form-item>
                                 </au-col>
                             </au-row>
