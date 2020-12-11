@@ -19,6 +19,7 @@ Esta es la lista de componentes del framework. De momento sólo están disponibl
 - [x] Input
 - [x] InputNumber
 - [x] Form
+- [x] Checkbox
 - [ ] DatePicker
 - [ ] TimePicker
 - [ ] Radio
