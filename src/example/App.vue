@@ -20,6 +20,9 @@
 
     <!--FORM-->
     <form-card />
+
+    <!--CHECKBOX-->
+    <checkbox-card />
   </div>
 </template>
 
@@ -31,6 +34,7 @@
   import InputCard from './components/InputCard'
   import FormCard from './components/FormCard'
   import DateCard from './components/DateCard'
+  import CheckboxCard from './components/CheckboxCard'
 
   export default {
     name: 'App',
@@ -41,7 +45,8 @@
       NavigatorCard, 
       InputCard, 
       FormCard, 
-      DateCard
+      DateCard,
+      CheckboxCard
     }
   }
 </script>
