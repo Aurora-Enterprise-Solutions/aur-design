@@ -16,9 +16,9 @@ export default async (props) => {
                 title: props.title,
                 message: props.message,
                 showOk: props.showOk,
-                showCancel: props.showCancel,
+                showCancel: props.showCancel ? props.showCancel : ( props.type == 'confirm' ? true : false ),
                 okText: props.okText,
-                cancelText: props.cancelText
+                cancelText: props.cancelText ? props.cancelText : null
             }
         });
         component.$mount();

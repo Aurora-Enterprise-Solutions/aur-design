@@ -1,0 +1,40 @@
+.au-checkbox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .input {
+        display: none;
+    }
+
+    .au-icon {
+        margin: 5px;
+    }
+
+    .icon-checked {
+        fill: $color-caribbean-green;
+        stroke: $color-white;
+
+        &[au-clickable]:hover {
+            stroke: $color-white;
+        }
+    }
+
+    .au-text {
+        display: flex;
+        align-items: center;
+    }
+
+    &[au-disabled] {
+        .au-text {
+            label {
+                color: $color-disabled;
+            }
+        }
+
+        .au-icon {
+            fill: $color-disabled;
+            stroke: $color-disabled;
+        }
+    }
+}

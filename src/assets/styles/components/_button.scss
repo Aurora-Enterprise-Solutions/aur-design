@@ -59,7 +59,8 @@
             background-color: transparent;
             color: $bkg-color;
 
-            &:hover {
+            &:hover,
+            &:active {
                 color: $bkg-hover-color;
                 background-color: transparent;
                 border-color: $bkg-hover-color;
